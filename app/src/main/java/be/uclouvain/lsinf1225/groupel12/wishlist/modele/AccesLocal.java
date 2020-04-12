@@ -14,7 +14,7 @@ public class AccesLocal {
     private SQLiteDatabase bd;
 
     public AccesLocal(Context context){
-        accesBd = new MySQLiteOpenHelper(context, nameBase, null, versionBase);
+        accesBd = new MySQLiteOpenHelper(context);
     }
 
     /**
