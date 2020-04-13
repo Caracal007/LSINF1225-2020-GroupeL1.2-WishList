@@ -15,7 +15,8 @@
         <item>XS</item>
         <item>S</item>
         <item>M</item>
-        <item>Vert</item>
+        <item>L</item>
+        <item>XL</item>
     </string-array>
 
     <string-array name="TailleChaussure">
