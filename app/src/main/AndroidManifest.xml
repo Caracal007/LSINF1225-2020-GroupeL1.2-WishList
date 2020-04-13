@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainInscription"></activity>
+        <activity android:name=".MainPreferences"></activity>
     </application>
 
 </manifest>

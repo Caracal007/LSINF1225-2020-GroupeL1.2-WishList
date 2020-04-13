@@ -13,12 +13,12 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainInscription extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_inscription);
 
         initInscription();
     }
