@@ -64,4 +64,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             }
     }
     //Inscription ------------------------------------------------------------------>>>
+
+    //Louis
+
 }
+
+//Lamby
