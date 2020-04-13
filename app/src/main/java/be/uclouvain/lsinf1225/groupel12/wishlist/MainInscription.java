@@ -36,8 +36,8 @@ public class MainInscription extends AppCompatActivity {
 
 
     private void initInscription(){
-        txtUsername = (TextInputEditText) findViewById(R.id.txtUsername);
-        txtPassword = (TextInputEditText) findViewById(R.id.txtPassword);
+        txtUsername = (TextInputEditText) findViewById(R.id.username);
+        txtPassword = (TextInputEditText) findViewById(R.id.password);
         txtFirst_name = (TextInputEditText) findViewById(R.id.txtFirst_name);
         txtLast_name = (TextInputEditText) findViewById(R.id.txtLast_name);
         txtEmail = (TextInputEditText) findViewById(R.id.txtEmail);

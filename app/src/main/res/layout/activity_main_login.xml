@@ -76,7 +76,7 @@
                     android:textColorHint="#FF9800">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtUsername"
+                        android:id="@+id/username"
                         android:layout_width="match_parent"
                         android:layout_height="41dp"
                         android:hint="@string/pseudo"
@@ -100,7 +100,7 @@
                     app:passwordToggleTint="#FFFFFF">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtPassword"
+                        android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/mot_de_passe"
