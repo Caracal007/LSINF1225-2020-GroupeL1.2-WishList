@@ -3,6 +3,11 @@
     <string name="connexion">Connexion</string>
     <string name="inscription">Inscription</string>
     <string name="sinscrire">"S'inscrire"</string>
+    <string name="Connexion">Connexion</string>
+    <string name="pseudo">Pseudo...</string>
+    <string name="mot_de_passe">Mot de passe...</string>
+    <string name="connexion_btn">Button</string>
+    <string name="inscription_btn">Button</string>
 
     <string-array name="Color">
         <item>Rouge</item>
