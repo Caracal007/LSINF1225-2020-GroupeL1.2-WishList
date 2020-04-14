@@ -76,11 +76,16 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         String get_password = "select colPassword from profil where colUsername='"+username+"'";
 
         Cursor cursor = (this.getReadableDatabase()).rawQuery(get_password, null);
+
+
+        int count = cursor.getCount();
+        if (count == 0) {
+            cursor.close();
+            return false;
+        }
         cursor.moveToFirst();
         pass = cursor.getString(0);
-
-
-
+        cursor.close();
         if (pass.equals(password)) {return true;}
         else {return false;}
 
