@@ -65,8 +65,28 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
     //Inscription ------------------------------------------------------------------>>>
 
-    //Louis
+
+
+
+    //Connection ------------------------------------------------------------------>>>
+
+    public Boolean checkConnection(String username, String password) {
+        String pass;
+
+        String get_password = "select colPassword from profil where colUsername='"+username+"'";
+
+        Cursor cursor = (this.getReadableDatabase()).rawQuery(get_password, null);
+        cursor.moveToFirst();
+        pass = cursor.getString(0);
+
+
+
+        if (pass.equals(password)) {return true;}
+        else {return false;}
+
+    }
+    //Connection ------------------------------------------------------------------>>>
 
 }
 
-//Lamby
+
