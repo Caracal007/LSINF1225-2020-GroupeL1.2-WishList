@@ -195,7 +195,7 @@
                 android:id="@+id/buttonMajPreferences"
                 android:layout_width="wrap_content"
                 android:layout_height="68dp"
-                android:text="Button"
+                android:text="Enregistrer"
                 tools:text="Mettre à jour" />
         </LinearLayout>
     </LinearLayout>
