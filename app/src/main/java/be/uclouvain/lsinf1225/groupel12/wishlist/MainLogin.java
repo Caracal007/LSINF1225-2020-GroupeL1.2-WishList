@@ -46,6 +46,7 @@ public class MainLogin extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else {
+                    mySQLiteOpenHelper.close();
                     Toast.makeText(this, "Username or password incorrect", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, MainLogin.class);
 

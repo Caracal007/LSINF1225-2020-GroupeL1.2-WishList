@@ -73,7 +73,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public Boolean checkConnection(String username, String password) {
         String pass;
 
-        String get_password = "select exists (select colPassword from profil where colUsername='"+username+"')";
+        String get_password = "select colPassword from profil where colUsername='"+username+"'";
 
         Cursor cursor = (this.getReadableDatabase()).rawQuery(get_password, null);
 
