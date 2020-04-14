@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+
 
 public class MainLogin extends AppCompatActivity {
 
     EditText username;
     EditText password;
     boolean isValid;
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,23 @@ public class MainLogin extends AppCompatActivity {
         connexion.setOnClickListener(v -> {
             checkDataEntered();
             if(isValid){
-                Toast.makeText(this, "Connexion en cours !", Toast.LENGTH_LONG).show();
+
+                mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+                String user_name = username.getText().toString();
+                String pass_word = password.getText().toString();
+                if (mySQLiteOpenHelper.checkConnection(user_name, pass_word)) {
+                    mySQLiteOpenHelper.close();
+                    Toast.makeText(this, "Connexion en cours !", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, MainProfil.class);
+
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(this, "Username or password incorrect", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, MainLogin.class);
+
+                    startActivity(intent);
+                }
             }
         });
 
