@@ -86,12 +86,25 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         pass = cursor.getString(0);
         cursor.close();
-        if (pass.equals(password)) {return true;}
+        if (pass.equals(password)) {
+            return true;
+        }
         else {return false;}
 
     }
     //Connection ------------------------------------------------------------------>>>
 
+    //Inscription  ------------------------------------------------------------------>>>
+
+    //Inscription  ------------------------------------------------------------------>>>
+
+    //Profil ------------------------------------------------------------------>>>
+    public String[] getLists(){
+        String lists[] = new String[10];
+        lists[0] = "null";
+        return lists;
+    }
+    //Profil ------------------------------------------------------------------>>>
 }
 
 

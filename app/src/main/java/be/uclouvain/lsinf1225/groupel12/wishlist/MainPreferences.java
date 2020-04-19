@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -35,14 +36,14 @@ public class MainPreferences extends AppCompatActivity {
     private Spinner spinnerTailleVetements;
     private Spinner spinnerTailleChaussures;
     private Spinner spinnerTheme;
-    private TextInputEditText textAdresse;
+    private EditText textAdresse;
 
     private void initPreferences(){
         spinnerCouleur = (Spinner) findViewById(R.id.spinnerCouleur);
         spinnerTailleVetements = (Spinner) findViewById(R.id.spinnerTailleVetements);
         spinnerTailleChaussures = (Spinner) findViewById(R.id.spinnerTailleChaussures);
         spinnerTheme = (Spinner) findViewById(R.id.spinnerTheme);
-        textAdresse = (TextInputEditText) findViewById(R.id.textAdresse);
+        textAdresse = (EditText) findViewById(R.id.textAdresse);
         buttonMajPreferences();
     }
 
@@ -57,10 +58,16 @@ public class MainPreferences extends AppCompatActivity {
         findViewById(R.id.buttonMajPreferences).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 Preferences();
+                openActivityProfil();
             }
         })
 
     ;}
+
+    public void openActivityProfil(){
+        Intent intent = new Intent(this, MainProfil.class);
+        startActivity(intent);
+    }
 
     public void onBackPressed() {
         // do nothing.

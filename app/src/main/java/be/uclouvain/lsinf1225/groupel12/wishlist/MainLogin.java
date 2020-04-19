@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 
 public class MainLogin extends AppCompatActivity {
@@ -42,7 +43,7 @@ public class MainLogin extends AppCompatActivity {
                     mySQLiteOpenHelper.close();
                     Toast.makeText(this, "Connexion en cours !", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, MainProfil.class);
-
+                    Session.initSession(user_name);
                     startActivity(intent);
                 }
                 else {
