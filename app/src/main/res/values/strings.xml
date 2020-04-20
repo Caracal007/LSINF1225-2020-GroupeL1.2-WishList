@@ -8,6 +8,9 @@
     <string name="mot_de_passe">Mot de passe...</string>
     <string name="connexion_btn">Button</string>
     <string name="inscription_btn">Button</string>
+    <string name="recherche_d_amis">Recherche d\'amis</string>
+    <string name="output">output_search</string>
+    <string name="output_search">output_search</string>
 
     <string-array name="Color">
         <item>NONE</item>
