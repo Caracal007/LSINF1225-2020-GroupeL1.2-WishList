@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import com.google.android.material.textfield.TextInputEditText;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 public class MainPreferences extends AppCompatActivity {
 
@@ -37,6 +38,7 @@ public class MainPreferences extends AppCompatActivity {
     private Spinner spinnerTailleChaussures;
     private Spinner spinnerTheme;
     private EditText textAdresse;
+    private String recup1, recup2, recup3, recup4, recup5;
 
     private void initPreferences(){
         spinnerCouleur = (Spinner) findViewById(R.id.spinnerCouleur);
@@ -48,8 +50,14 @@ public class MainPreferences extends AppCompatActivity {
     }
 
     private void Preferences() {
+        recup1 = spinnerCouleur.getSelectedItem().toString();
+        recup2 = spinnerTailleVetements.getSelectedItem().toString();
+        recup3 = spinnerTailleChaussures.getSelectedItem().toString();
+        recup4 = spinnerTheme.getSelectedItem().toString();
+        recup5 = textAdresse.getText().toString();
+
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        //à compléter
+        mySQLiteOpenHelper.insertPreferences(Session.getSession(), recup1, recup2, recup3, recup4, recup5);
         mySQLiteOpenHelper.close();
     }
 
