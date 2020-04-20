@@ -80,6 +80,17 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
 
 
+    //Preferences ------------------------------------------------------------------>>>
+    public void insertPreferences(String username, String couleur, String vetements, String chaussures, String theme, String adresse){
+
+        String creation = "insert into preferences (colUsername, colCouleur, colTailleVetements, colTailleChaussures, colTheme, colAdresse) values ('"
+                + username + "','" + couleur + "','" + vetements + "','" + chaussures + "','" + theme + "','" + adresse + "')";
+        this.getWritableDatabase().execSQL(creation);
+
+    }
+    //Preferences ------------------------------------------------------------------>>>
+
+
     //Connection ------------------------------------------------------------------>>>
 
     public Boolean checkConnection(String username, String password) {
