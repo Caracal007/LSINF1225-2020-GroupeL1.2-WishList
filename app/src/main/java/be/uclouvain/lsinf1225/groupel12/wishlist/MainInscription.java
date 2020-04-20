@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 public class MainInscription extends AppCompatActivity {
 
@@ -66,6 +67,7 @@ public class MainInscription extends AppCompatActivity {
                 Toast.makeText(this, alreadyExist, Toast.LENGTH_LONG).show();
             }
             else{
+                Session.initSession(recup1);
                 openActivity2();
             }
             mySQLiteOpenHelper.close();
