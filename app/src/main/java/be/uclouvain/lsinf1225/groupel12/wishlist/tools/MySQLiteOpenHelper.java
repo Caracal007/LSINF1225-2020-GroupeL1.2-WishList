@@ -29,6 +29,18 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL(creation);
         Log.i("DATABASE", "onCreate invoked");
+
+        String creationPreferences= "create table preferences ("
+                + "colUsername text not null,"
+                + "colCouleur text not null,"
+                + "colTailleVetements text not null,"
+                + "colTailleChaussures text not null,"
+                + "colTheme text not null,"
+                + "colAdresse text not null,"
+                + ")";
+
+        db.execSQL(creationPreferences);
+        Log.i("DATABASE", "onCreate invoked");
     }
 
     @Override
