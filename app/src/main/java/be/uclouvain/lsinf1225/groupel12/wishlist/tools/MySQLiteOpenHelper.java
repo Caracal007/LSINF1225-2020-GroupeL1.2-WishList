@@ -36,7 +36,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
                 + "colTailleVetements text not null,"
                 + "colTailleChaussures text not null,"
                 + "colTheme text not null,"
-                + "colAdresse text not null,"
+                + "colAdresse text not null"
                 + ")";
 
         db.execSQL(creationPreferences);
