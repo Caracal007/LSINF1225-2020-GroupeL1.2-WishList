@@ -20,15 +20,7 @@ public class MainPreferences extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_preferences);
-
-        Button inscription = findViewById(R.id.buttonMajPreferences);
-        inscription.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, MainProfil.class);
-
-            startActivity(intent);
-        });
-
+        initPreferences();
     }
     private MySQLiteOpenHelper mySQLiteOpenHelper;
 
@@ -57,7 +49,7 @@ public class MainPreferences extends AppCompatActivity {
         recup5 = textAdresse.getText().toString();
 
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        mySQLiteOpenHelper.insertPreferences(Session.getSession(), recup1, recup2, recup3, recup4, recup5);
+        mySQLiteOpenHelper.insertPreferences("lol", recup1, recup2, recup3, recup4, recup5);
         mySQLiteOpenHelper.close();
     }
 

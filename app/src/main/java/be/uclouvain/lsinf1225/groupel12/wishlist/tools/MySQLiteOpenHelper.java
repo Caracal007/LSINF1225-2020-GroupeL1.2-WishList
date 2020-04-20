@@ -83,9 +83,18 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     //Preferences ------------------------------------------------------------------>>>
     public void insertPreferences(String username, String couleur, String vetements, String chaussures, String theme, String adresse){
 
+        username = username.replace("'", "''");
+        couleur = couleur.replace("'", "''");
+        vetements = vetements.replace("'", "''");
+        chaussures = chaussures.replace("'", "''");
+        theme = theme.replace("'", "''");
+        adresse = adresse.replace("'", "''");
+
         String creation = "insert into preferences (colUsername, colCouleur, colTailleVetements, colTailleChaussures, colTheme, colAdresse) values ('"
                 + username + "','" + couleur + "','" + vetements + "','" + chaussures + "','" + theme + "','" + adresse + "')";
         this.getWritableDatabase().execSQL(creation);
+        int count = 3;
+        Log.i("DATABASE", String.valueOf(count));
 
     }
     //Preferences ------------------------------------------------------------------>>>

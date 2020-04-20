@@ -14,9 +14,13 @@ public class MainProfil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profil);
+
         TextView session = (TextView) findViewById(R.id.session);
         session.setText(Session.getSession());
+
+
     }
+
     public void onBackPressed() {
         // do nothing.
     }

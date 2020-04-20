@@ -104,8 +104,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.2"
                     android:orientation="horizontal">
 
                     <TextView
@@ -122,56 +122,21 @@
 
                 </LinearLayout>
 
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:orientation="vertical">
-
-
-                        <Button
-                            android:id="@+id/button3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Variable"
-                            android:textAlignment="viewStart" />
-
-                        <Button
-                            android:id="@+id/button2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Variable"
-                            android:textAlignment="viewStart" />
-
-                        <Button
-                            android:id="@+id/button"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Variable"
-                            android:textAlignment="viewStart" />
-                    </LinearLayout>
-                </ScrollView>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.3"
                     android:gravity="bottom|right"
 
                     android:orientation="vertical">
 
 
                     <ImageButton
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_marginVertical="25dp"
                         android:id="@+id/imageButton12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginVertical="25dp"
                         android:background="#00DADADA"
                         app:srcCompat="@drawable/icons8_ajouter_96" />
                 </LinearLayout>
