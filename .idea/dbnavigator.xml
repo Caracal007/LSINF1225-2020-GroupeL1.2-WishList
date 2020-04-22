@@ -23,7 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="eed295ce-ecba-4f73-be10-238cec1d58d8">
+        <schema name="main" object-types="column, table, view, dataset trigger, constraint, index" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="eed295ce-ecba-4f73-be10-238cec1d58d8">
@@ -31,7 +35,9 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="eed295ce-ecba-4f73-be10-238cec1d58d8" object-ref="schemas/main/tables/profil" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="eed295ce-ecba-4f73-be10-238cec1d58d8" />
@@ -78,7 +84,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="C:\Users\maxim\Desktop\Wish.Inscription7" schema="main" />
+            <file path="C:\Users\maxim\Desktop\Wish.Inscription" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

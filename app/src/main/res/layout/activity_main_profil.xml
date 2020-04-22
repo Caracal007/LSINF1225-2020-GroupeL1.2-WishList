@@ -75,7 +75,7 @@
                     app:autoSizeTextType="none" />
 
                 <ImageButton
-                    android:id="@+id/imageButton11"
+                    android:id="@+id/Modifprofil"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -132,15 +132,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TableRow>
-
-                            <TextView
-                                android:id="@+id/info"
-                                android:layout_gravity="center_horizontal"
-                                android:text="test11"
-                                android:textColor="#000000" />
-
-                        </TableRow>
                     </LinearLayout>
                 </ScrollView>
 
@@ -159,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="25dp"
-                        android:layout_marginVertical="25dp"
+                        android:layout_marginVertical="20dp"
                         android:background="#00DADADA"
                         app:srcCompat="@drawable/icons8_ajouter_96" />
                 </LinearLayout>

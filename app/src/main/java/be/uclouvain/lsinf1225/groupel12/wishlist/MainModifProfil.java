@@ -11,12 +11,13 @@ public class MainModifProfil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_preferences);
+        setContentView(R.layout.activity_main_modif_profil);
         logout();
+
     }
-    /* Button ---------------------------------------------------------------- */
+    /* Button logout ---------------------------------------------------------------- */
     private void logout() {
-        findViewById(R.id.buttonMajPreferences).setOnClickListener(new Button.OnClickListener(){
+        findViewById(R.id.buttonLogout).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 openActivityLogin();
             }
@@ -26,7 +27,7 @@ public class MainModifProfil extends AppCompatActivity {
         Intent intent = new Intent(this, MainLogin.class);
         startActivity(intent);
     }
-    /* Button ---------------------------------------------------------------- */
+    /* Button logout---------------------------------------------------------------- */
 }
 
 

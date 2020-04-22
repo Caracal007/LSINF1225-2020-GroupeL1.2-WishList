@@ -131,11 +131,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     //Inscription  ------------------------------------------------------------------>>>
 
     //Profil ------------------------------------------------------------------>>>
-    public String[] getLists(){
+    /*public String[] getLists(){
         String lists[] = new String[10];
         lists[0] = "null";
         return lists;
-    }
+    }*/
     //Profil ------------------------------------------------------------------>>>
 }
 

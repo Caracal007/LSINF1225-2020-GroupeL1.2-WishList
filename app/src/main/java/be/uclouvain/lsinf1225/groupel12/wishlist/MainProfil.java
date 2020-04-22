@@ -20,9 +20,25 @@ public class MainProfil extends AppCompatActivity {
 
         TextView session = (TextView) findViewById(R.id.session);
         session.setText(Session.getSession());
-
+        buttonModifProfil();
 
     }
+
+    /* Button ModifProfil---------------------------------------------------------------- */
+    private void buttonModifProfil() {
+        findViewById(R.id.Modifprofil).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                openActivityModifProfil();
+            }
+        })
+
+        ;}
+
+    public void openActivityModifProfil(){
+        Intent intent = new Intent(this, MainModifProfil.class);
+        startActivity(intent);
+    }
+    /* Button ModifProfil---------------------------------------------------------------- */
 
     public void onBackPressed() {
         // do nothing.
