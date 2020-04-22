@@ -30,7 +30,7 @@ public class MainPreferences extends AppCompatActivity {
     private Spinner spinnerTailleChaussures;
     private Spinner spinnerTheme;
     private EditText textAdresse;
-    private String recup1, recup2, recup3, recup4, recup5;
+    private String recup1, recup2, recup3, recup4, recup5, session;
 
     private void initPreferences(){
         spinnerCouleur = (Spinner) findViewById(R.id.spinnerCouleur);
@@ -47,9 +47,10 @@ public class MainPreferences extends AppCompatActivity {
         recup3 = spinnerTailleChaussures.getSelectedItem().toString();
         recup4 = spinnerTheme.getSelectedItem().toString();
         recup5 = textAdresse.getText().toString();
+        session = Session.getSession();
 
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        mySQLiteOpenHelper.insertPreferences("lol", recup1, recup2, recup3, recup4, recup5);
+        mySQLiteOpenHelper.insertPreferences(session, recup1, recup2, recup3, recup4, recup5);
         mySQLiteOpenHelper.close();
     }
 

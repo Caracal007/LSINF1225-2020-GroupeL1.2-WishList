@@ -15,7 +15,7 @@
     <string name="Nom_du_cadeau">"Nom du cadeau…"</string>
 
     <string-array name="Color">
-        <item>NONE</item>
+        <item> </item>
         <item>Rouge</item>
         <item>Bleu</item>
         <item>Jaune</item>
@@ -23,7 +23,7 @@
     </string-array>
 
     <string-array name="TailleVetement">
-        <item>NONE</item>
+        <item> </item>
         <item>XS</item>
         <item>S</item>
         <item>M</item>
@@ -32,7 +32,7 @@
     </string-array>
 
     <string-array name="TailleChaussure">
-        <item>NONE</item>
+        <item> </item>
         <item>37-38</item>
         <item>38-39</item>
         <item>39-40</item>
@@ -42,7 +42,7 @@
     </string-array>
 
     <string-array name="Thèmes">
-        <item>NONE</item>
+        <item> </item>
         <item>Jardin</item>
         <item>Mobilier</item>
         <item>Sport</item>
