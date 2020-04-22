@@ -100,10 +100,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_marginHorizontal="10dp"
                             android:layout_weight="1"
-                            android:background="#FF9C22"
                             android:gravity="clip_horizontal|center_horizontal|center_vertical"
-                            android:text="Déconnexion " />
+                            android:text="Déconnexion "
+                            android:textColor="#E40202" />
+
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -120,7 +123,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:background="#9E9A9A"
+                        android:background="#009E9A9A"
                         android:gravity="center"
                         android:textColorHint="#FF9800"
                         app:passwordToggleTint="#FFFFFF">
@@ -147,7 +150,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:background="#9E9A9A"
+                        android:background="#009E9A9A"
                         android:gravity="center"
                         android:textColorHint="#FF9800"
                         app:passwordToggleTint="#FFFFFF">
@@ -172,7 +175,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:background="#9E9A9A"
+                        android:background="#009E9A9A"
                         android:gravity="center"
                         android:textColorHint="#FF9800"
                         app:passwordToggleTint="#FFFFFF">
