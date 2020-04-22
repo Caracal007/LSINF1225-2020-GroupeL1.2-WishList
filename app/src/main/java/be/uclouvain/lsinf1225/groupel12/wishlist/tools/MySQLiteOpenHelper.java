@@ -83,6 +83,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     //Preferences ------------------------------------------------------------------>>>
     public void insertPreferences(String username, String couleur, String vetements, String chaussures, String theme, String adresse){
 
+        String check = "select colUsername from profil where colUsername='"+username+"''";
+        Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
+        int count = cursor.getCount();
+        cursor.close();
+
         username = username.replace("'", "''");
         couleur = couleur.replace("'", "''");
         vetements = vetements.replace("'", "''");
@@ -90,11 +95,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         theme = theme.replace("'", "''");
         adresse = adresse.replace("'", "''");
 
+        if (count != 0) {
+            String delete = "delete from preferences where colUsername='"+username+"''";
+            this.getWritableDatabase().execSQL(delete);
+        }
+
         String creation = "insert into preferences (colUsername, colCouleur, colTailleVetements, colTailleChaussures, colTheme, colAdresse) values ('"
                 + username + "','" + couleur + "','" + vetements + "','" + chaussures + "','" + theme + "','" + adresse + "')";
         this.getWritableDatabase().execSQL(creation);
-        int count = 3;
-        Log.i("DATABASE", String.valueOf(count));
+
 
     }
     //Preferences ------------------------------------------------------------------>>>
@@ -125,10 +134,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     }
     //Connection ------------------------------------------------------------------>>>
-
-    //Inscription  ------------------------------------------------------------------>>>
-
-    //Inscription  ------------------------------------------------------------------>>>
 
     //Profil ------------------------------------------------------------------>>>
     /*public String[] getLists(){

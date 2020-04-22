@@ -203,7 +203,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/ButtonTerminerModif"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -228,7 +228,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/modifPref"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"

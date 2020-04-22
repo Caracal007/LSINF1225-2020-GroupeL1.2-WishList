@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".MainInscription" />
         <activity android:name=".MainPreferences" />
+        <activity android:name=".MainModifProfil" />
     </application>
 
 </manifest>

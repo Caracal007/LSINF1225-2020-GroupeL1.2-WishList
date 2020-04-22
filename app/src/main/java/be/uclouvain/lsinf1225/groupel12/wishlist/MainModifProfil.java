@@ -13,6 +13,8 @@ public class MainModifProfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_modif_profil);
         logout();
+        down();
+        modif();
 
     }
     /* Button logout ---------------------------------------------------------------- */
@@ -28,6 +30,34 @@ public class MainModifProfil extends AppCompatActivity {
         startActivity(intent);
     }
     /* Button logout---------------------------------------------------------------- */
+
+    /* Button terminer ---------------------------------------------------------------- */
+    private void down() {
+        findViewById(R.id.ButtonTerminerModif).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                openActivityProfil();
+            }
+        })
+        ;}
+    public void openActivityProfil(){
+        Intent intent = new Intent(this, MainProfil.class);
+        startActivity(intent);
+    }
+    /* Button terminer---------------------------------------------------------------- */
+
+    /* Button modif ---------------------------------------------------------------- */
+    private void modif() {
+        findViewById(R.id.modifPref).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                openActivityPreferences();
+            }
+        })
+        ;}
+    public void openActivityPreferences(){
+        Intent intent = new Intent(this, MainPreferences.class);
+        startActivity(intent);
+    }
+    /* Button modif ---------------------------------------------------------------- */
 }
 
 
