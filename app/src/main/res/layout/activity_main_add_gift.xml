@@ -3,138 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainAddGift">
 
     <ImageView
         android:id="@+id/background"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
         android:scaleType="matrix"
-        android:src="@drawable/backgroundapp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:srcCompat="@drawable/backgroundapp" />
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
+            android:layout_height="76dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
                 android:layout_height="76dp"
-                android:layout_weight="1"
                 android:background="#DADADA"
-                android:orientation="horizontal"
-                tools:ignore="NestedWeights">
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#DADADA"
-                    android:baselineAligned="false"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:lineSpacingExtra="12sp"
-                    android:text="@string/recherche_d_amis"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#000000"
-                    android:textSize="36sp"
-                    android:visibility="visible"
-                    app:autoSizeTextType="none" />
-
-            </LinearLayout>
-
+                android:gravity="center_horizontal|center_vertical"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="32sp"
+                tools:text="@string/Ajouter_un_cadeau" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:layout_weight="0.4"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="vertical">
+            android:layout_height="634dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@color/lightgrey"
+                android:layout_height="79dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:orientation="vertical">
 
-
-                <SearchView
-                    android:id="@+id/searchView"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:iconifiedByDefault="false"
-                    android:queryHint="Search Here">
-
-                </SearchView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:background="@color/lightgrey"
-                android:orientation="horizontal">
-
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.2"
-                    android:padding="10dp"
-                    android:text="@string/output_search"
-                    android:textAlignment="center"
-                    android:textSize="15sp">
-
-                </TextView>
-
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.9"
-                    app:srcCompat="@drawable/icons8_ajouter_96" />
-
+                    android:id="@+id/textView9"
+                    android:layout_width="308dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="#DADADA"
+                    android:gravity="left|center_vertical"
+                    android:text="Nom du cadeau..."
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
             </LinearLayout>
-
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal|end"
-            android:orientation="horizontal">
-
+            android:layout_height="76dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -192,9 +142,7 @@
                 </LinearLayout>
 
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

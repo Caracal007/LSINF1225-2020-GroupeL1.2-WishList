@@ -11,6 +11,7 @@
     <string name="recherche_d_amis">Recherche d\'amis</string>
     <string name="output">output_search</string>
     <string name="output_search">output_search</string>
+    <string name="Ajouter_un_cadeau">"Ajouter un Cadeau"</string>
 
     <string-array name="Color">
         <item>NONE</item>
