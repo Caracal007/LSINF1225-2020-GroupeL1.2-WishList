@@ -13,6 +13,10 @@
     <string name="output_search">output_search</string>
     <string name="Ajouter_un_cadeau">"Ajouter un Cadeau"</string>
     <string name="Nom_du_cadeau">"Nom du cadeau…"</string>
+    <string name="Description">"Description…"</string>
+    <string name="Prix">"Prix…"</string>
+    <string name="URL">"URL…"</string>
+    <string name="Add">"Add"</string>
 
     <string-array name="Color">
         <item> </item>
