@@ -41,6 +41,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL(creationPreferences);
         Log.i("DATABASE", "onCreate invoked");
+
+        String creationWishlist= "create table wishlists ("
+                + "colUsername text not null,"
+                + "colWishlistName text not null,"
+                + "colPrivacy boolean not null"
+                + ")";
+
+        db.execSQL(creationWishlist);
+        Log.i("DATABASE", "onCreate invoked");
     }
 
     @Override
@@ -142,6 +151,32 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         return lists;
     }*/
     //Profil ------------------------------------------------------------------>>>
+
+
+    //Add Wishlist -------------------------------------------------------------->>>
+
+    public String insertAddWishlist(String username, String nameList, String privacy){
+
+        String check = "select colUsername from wishlists where colUsername='"+username+"' or colWishlistName='"+nameList+"'";
+        Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
+        int count = cursor.getCount();
+        cursor.close();
+
+        if (count == 0) {
+            nameList = nameList.replace("'", "''");
+
+            String creation = "insert into wishlists (colUsername, colWishlistName, colPrivacy) values ('"
+                    + username + "','" + nameList + "','" + privacy + "')";
+            this.getWritableDatabase().execSQL(creation);
+            Log.i("DATABASE", String.valueOf(count));
+
+            return null;
+        }
+        else {
+            return ("You already have a list called " + nameList);
+        }
+    }
+    //Add Wishlist -------------------------------------------------------------->>>
 }
 
 
