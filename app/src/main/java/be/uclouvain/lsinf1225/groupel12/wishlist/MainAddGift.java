@@ -6,8 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 
 public class MainAddGift extends AppCompatActivity {
+
+    EditText name;
+    EditText description;
+    EditText price;
+    EditText url;
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +25,11 @@ public class MainAddGift extends AppCompatActivity {
         setContentView(R.layout.activity_main_add_gift);
 
         bottomButton();
+
+        name = findViewById(R.id.gift_name);
+        description = findViewById(R.id.description);
+        price = findViewById(R.id.price);
+        url = findViewById(R.id.url);
     }
 
 
