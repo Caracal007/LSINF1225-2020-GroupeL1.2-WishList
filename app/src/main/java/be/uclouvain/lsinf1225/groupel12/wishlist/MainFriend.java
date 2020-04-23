@@ -6,45 +6,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
-import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
-
-public class MainProfil extends AppCompatActivity {
+public class MainFriend extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_profil);
+        setContentView(R.layout.activity_main_friend);
 
-        TextView session = (TextView) findViewById(R.id.session);
-        session.setText(Session.getSession());
-
-        allButton();
-    }
-
-
-
-    /* *************** BUTTON *********************** */
-    private void allButton(){
-        buttonModifProfil();
         bottomButton();
+        buttonAddFriend();
     }
-    /* Button ModifProfil---------------------------------------------------------------- */
-    private void buttonModifProfil() {
-        findViewById(R.id.Modifprofil).setOnClickListener(new Button.OnClickListener(){
+
+    /* Button AddFriend---------------------------------------------------------------- */
+    private void buttonAddFriend() {
+        findViewById(R.id.buttonAddFriend).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                openActivityModifProfil();
+                openActivityAddFriend();
             }
         })
         ;}
-    public void openActivityModifProfil(){
-        Intent intent = new Intent(this, MainModifProfil.class);
+    public void openActivityAddFriend(){
+        Intent intent = new Intent(this, MainAddFriend.class);
         startActivity(intent);
     }
-    /* Button ModifProfil---------------------------------------------------------------- */
-
+    /* Button AddFriend---------------------------------------------------------------- */
     /* BOTTOM BUTTON */
     private void bottomButton(){
         buttonAddGift();
@@ -92,11 +78,4 @@ public class MainProfil extends AppCompatActivity {
     }
     /* Button Friend---------------------------------------------------------------- */
     /* BOTTOM BUTTON */
-    /* *************** BUTTON *********************** */
-
-    /* Button Retour---------------------------------------------------------------- */
-    public void onBackPressed() {
-        // do nothing.
-    }
-    /* Button Retour---------------------------------------------------------------- */
 }

@@ -32,7 +32,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="76dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#DADADA"
                 android:orientation="horizontal">
@@ -40,7 +40,7 @@
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="76dp"
                     android:layout_weight="1"
                     android:background="#DADADA"
                     android:fontFamily="sans-serif"
@@ -55,8 +55,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="589dp"
-            android:layout_weight="1"
+            android:layout_height="1dp"
+            android:layout_weight="9"
             android:orientation="vertical">
 
             <LinearLayout
@@ -102,6 +102,7 @@
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:layout_marginHorizontal="10dp"
                             android:layout_weight="1"
+                            android:background="#00FFFFFF"
                             android:gravity="clip_horizontal|center_horizontal|center_vertical"
                             android:text="Déconnexion "
                             android:textColor="#E40202" />

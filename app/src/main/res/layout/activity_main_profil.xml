@@ -146,7 +146,7 @@
 
 
                     <ImageButton
-                        android:id="@+id/imageButton12"
+                        android:id="@+id/buttonAddFriend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="25dp"
@@ -181,7 +181,7 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/imageButton8"
+                        android:id="@+id/buttonProfil"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -197,7 +197,7 @@
                     android:orientation="horizontal" >
 
                     <ImageButton
-                        android:id="@+id/imageButton10"
+                        android:id="@+id/buttonAddGift"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -213,7 +213,7 @@
                     android:orientation="horizontal" >
 
                     <ImageButton
-                        android:id="@+id/Friends"
+                        android:id="@+id/buttonFriends"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

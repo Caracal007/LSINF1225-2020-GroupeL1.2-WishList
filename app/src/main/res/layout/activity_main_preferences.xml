@@ -168,7 +168,7 @@
                 android:layout_width="320dp"
                 android:layout_height="48dp"
                 android:gravity="bottom"
-                android:text="TextView"
+                android:text="Adresse"
                 android:textColor="#FF9800"
                 android:textSize="24sp"
                 tools:text="Adresse" />
