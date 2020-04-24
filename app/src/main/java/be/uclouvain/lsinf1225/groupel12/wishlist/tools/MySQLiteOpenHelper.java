@@ -50,6 +50,16 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL(creationWishlist);
         Log.i("DATABASE", "onCreate invoked");
+
+        String creationItems = "create table items ("
+                + "name text not null,"
+                + "description text not null,"
+                + "price text not null,"
+                + "url text not null"
+                + ")";
+
+        db.execSQL(creationItems);
+        Log.i("DATABASE", "onCreate invoked");
     }
 
     @Override
@@ -177,6 +187,16 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         }
     }
     //Add Wishlist -------------------------------------------------------------->>>
+
+    //Add Gift ------------------------------------------------------------------>>>
+
+    public void addItem(String name, String description, String price, String url) {
+        String creation = "insert into items (name, description, price, url) values ('"
+                + name + "','" + description + "', '" + price + "','" + url + "')";
+        this.getWritableDatabase().execSQL(creation);
+    }
+
+    //Add Gift ------------------------------------------------------------------>>>
 }
 
 
