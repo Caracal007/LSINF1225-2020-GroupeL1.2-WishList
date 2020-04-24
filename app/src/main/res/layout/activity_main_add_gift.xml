@@ -17,76 +17,59 @@
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#DADADA"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/Ajouter_un_cadeau"
-                android:textColor="#000000"
-                android:textSize="32sp"
-                tools:text="@string/Ajouter_un_cadeau" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="630dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="454dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="245dp"
+                    android:layout_height="407dp"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/textView3"
                         android:layout_width="match_parent"
-                        android:layout_height="68dp"
-                        android:orientation="vertical">
+                        android:layout_height="76dp"
+                        android:background="#DADADA"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/Ajouter_un_cadeau"
+                        android:textColor="#000000"
+                        android:textSize="32sp"
+                        tools:text="@string/Ajouter_un_cadeau" />
 
-                    </LinearLayout>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/name_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:hint="@string/Nom_du_cadeau"
                         android:textColorHint="@color/colorPrimary">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/gift_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/Nom_du_cadeau" />
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent" />
                     </com.google.android.material.textfield.TextInputLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="21dp"
-                        android:orientation="vertical"></LinearLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -98,163 +81,151 @@
                             android:id="@+id/description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="hint" />
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent" />
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="68dp"
+                        android:hint="@string/URL"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/url"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:hint="@string/Prix"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="133dp"
+                        android:layout_height="79dp"
+                        android:background="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/icons8_image" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="101dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <Button
+                        android:id="@+id/add"
+                        android:layout_width="335dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Add"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="bottom"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_height="76dp"
+                        android:background="#FF9800"
+                        android:gravity="center_horizontal|center_vertical">
 
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="93dp"
-                            android:layout_height="119dp"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginLeft="16dp"
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#FFFFFF"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:srcCompat="@mipmap/icone8_image_foreground" />
-                    </LinearLayout>
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="91dp"
-                        android:orientation="horizontal">
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:hint="@string/Prix"
-                            android:textColorHint="@color/colorPrimary">
-
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/price"
-                                android:layout_width="match_parent"
+                            <ImageButton
+                                android:id="@+id/buttonProfil"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="hint" />
-                        </com.google.android.material.textfield.TextInputLayout>
-                    </LinearLayout>
+                                android:layout_weight="1"
+                                android:background="#FF9800"
+                                app:srcCompat="@drawable/icons8_utilisateur_96" />
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal">
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="68dp"
-                            android:hint="@string/URL"
-                            android:textColorHint="@color/colorPrimary">
-
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/url"
-                                android:layout_width="match_parent"
+                            <ImageButton
+                                android:id="@+id/buttonAddGift"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="hint" />
-                        </com.google.android.material.textfield.TextInputLayout>
-                    </LinearLayout>
+                                android:layout_weight="1"
+                                android:background="#FF9800"
+                                app:srcCompat="@drawable/icons8_ajouter_96" />
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
 
-                        <Button
-                            android:id="@+id/button"
-                            android:layout_width="335dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Add"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/buttonFriends"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#FF9800"
+                                app:srcCompat="@drawable/icons8_user_group_2_96" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
-
             </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FF9800"
-                android:gravity="center_horizontal|center_vertical">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/buttonProfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#FF9800"
-                        app:srcCompat="@drawable/icons8_utilisateur_96" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/buttonAddGift"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#FF9800"
-                        app:srcCompat="@drawable/icons8_ajouter_96" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/buttonFriends"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#FF9800"
-                        app:srcCompat="@drawable/icons8_user_group_2_96" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,19 @@
 package be.uclouvain.lsinf1225.groupel12.wishlist;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.TextUtils;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 public class MainAddGift extends AppCompatActivity {
 
@@ -16,6 +21,7 @@ public class MainAddGift extends AppCompatActivity {
     EditText description;
     EditText price;
     EditText url;
+    boolean isValid;
     private MySQLiteOpenHelper mySQLiteOpenHelper;
 
 
@@ -24,12 +30,30 @@ public class MainAddGift extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_add_gift);
 
-        bottomButton();
-
         name = findViewById(R.id.gift_name);
         description = findViewById(R.id.description);
         price = findViewById(R.id.price);
         url = findViewById(R.id.url);
+        Button add = findViewById(R.id.add);
+
+        bottomButton();
+
+        add.setOnClickListener(v -> {
+            checkDataEntered();
+            if (isValid) {
+                mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+                String name_txt = name.getText().toString();
+                String description_txt = description.getText().toString();
+                String price_txt = price.getText().toString();
+                String url_txt = url.getText().toString();
+                mySQLiteOpenHelper.addItem(name_txt, description_txt, price_txt, url_txt);
+                mySQLiteOpenHelper.close();
+                Toast.makeText(this, "Gift added", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, MainProfil.class);
+
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -79,4 +103,17 @@ public class MainAddGift extends AppCompatActivity {
     }
     /* Button Friend---------------------------------------------------------------- */
     /* BOTTOM BUTTON */
+
+    boolean isEmpty(EditText text) {
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
+
+    void checkDataEntered() {
+        isValid = true;
+        if (isEmpty(name)) {
+            name.setError("name is required");
+            isValid = false;
+        }
+    }
 }
