@@ -30,6 +30,7 @@ public class MainProfil extends AppCompatActivity {
     private void allButton(){
         buttonModifProfil();
         bottomButton();
+        buttonAddWishlist();
     }
     /* Button ModifProfil---------------------------------------------------------------- */
     private void buttonModifProfil() {
@@ -44,6 +45,19 @@ public class MainProfil extends AppCompatActivity {
         startActivity(intent);
     }
     /* Button ModifProfil---------------------------------------------------------------- */
+    /* Button AddWishlist---------------------------------------------------------------- */
+    private void buttonAddWishlist() {
+        findViewById(R.id.Modifprofil).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                openActivityModifProfil();
+            }
+        })
+        ;}
+    public void openActivityAddWishlist(){
+        Intent intent = new Intent(this, MainAddWishlist.class);
+        startActivity(intent);
+    }
+    /* Button AddWishlist---------------------------------------------------------------- */
 
     /* BOTTOM BUTTON */
     private void bottomButton(){
