@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.TextUtils;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
-import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 public class MainAddGift extends AppCompatActivity {
 
@@ -30,7 +28,7 @@ public class MainAddGift extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_add_gift);
 
-        name = findViewById(R.id.gift_name);
+        name = findViewById(R.id.name);
         description = findViewById(R.id.description);
         price = findViewById(R.id.price);
         url = findViewById(R.id.url);
