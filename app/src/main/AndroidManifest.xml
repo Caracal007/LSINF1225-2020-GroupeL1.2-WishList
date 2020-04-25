@@ -23,6 +23,7 @@
         <activity android:name=".MainPreferences" />
         <activity android:name=".MainModifProfil" />
         <activity android:name=".MainAddGift" />
+        <activity android:name=".MainAddWishlist" />
     </application>
 
 </manifest>

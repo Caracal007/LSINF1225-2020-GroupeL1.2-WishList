@@ -47,9 +47,9 @@ public class MainProfil extends AppCompatActivity {
     /* Button ModifProfil---------------------------------------------------------------- */
     /* Button AddWishlist---------------------------------------------------------------- */
     private void buttonAddWishlist() {
-        findViewById(R.id.Modifprofil).setOnClickListener(new Button.OnClickListener(){
+        findViewById(R.id.buttonAddWishlist).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                openActivityModifProfil();
+                openActivityAddWishlist();
             }
         })
         ;}
