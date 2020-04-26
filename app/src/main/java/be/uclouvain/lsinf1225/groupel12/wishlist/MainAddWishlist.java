@@ -48,6 +48,7 @@ public class MainAddWishlist extends AppCompatActivity{
         }
         else{
             mySQLiteOpenHelper.insertAddWishlist(session, recup1, recup2);
+            openActivityProfil();
         }
         mySQLiteOpenHelper.close();
     }
@@ -56,14 +57,13 @@ public class MainAddWishlist extends AppCompatActivity{
         ((Button) findViewById(R.id.buttonSaveNewList)).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 AddWishList();
-                openActivityWishlists();
             }
         });
     }
 
-    public void openActivityWishlists(){
-        //Intent intent = new Intent(this, MainWishlists.class);
-        //startActivity(intent);
+    public void openActivityProfil(){
+        Intent intent = new Intent(this, MainProfil.class);
+        startActivity(intent);
     }
 
 }

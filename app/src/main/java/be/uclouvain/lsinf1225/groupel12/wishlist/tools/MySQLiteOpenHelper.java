@@ -164,7 +164,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         if (count == 0){
             return null;
         }
-        Log.i("TEST", String.valueOf(count));
         String lists[] = new String[count];
 
         cursor.moveToFirst();
@@ -176,8 +175,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return lists;
-
-
     }
     //Profil ------------------------------------------------------------------>>>
 

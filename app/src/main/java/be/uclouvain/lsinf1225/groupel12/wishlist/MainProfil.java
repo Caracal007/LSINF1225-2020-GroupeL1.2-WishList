@@ -35,8 +35,11 @@ public class MainProfil extends AppCompatActivity {
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollWishlistsTab);
                 TextView wishlistName = new TextView(this);
                 wishlistName.setText(Tab[i]);
-                wishlistName.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT));
-
+                wishlistName.setTextSize(25);
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                layoutParams.setMargins(45, 10, 30, 0);
+                wishlistName.setLayoutParams(layoutParams);
                 tableau.addView(wishlistName);
             }
         }
