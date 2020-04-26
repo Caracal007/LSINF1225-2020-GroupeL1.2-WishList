@@ -155,11 +155,30 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     //Connection ------------------------------------------------------------------>>>
 
     //Profil ------------------------------------------------------------------>>>
-    /*public String[] getLists(){
-        String lists[] = new String[10];
-        lists[0] = "null";
+    public String[] getLists(String username){
+
+        String take = "select * from wishlists where colUsername='" + username + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        int count = cursor.getCount();
+
+        if (count == 0){
+            return null;
+        }
+        Log.i("TEST", String.valueOf(count));
+        String lists[] = new String[count];
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            for (int i = 0; i < count; i++) {
+                lists[i] = cursor.getString(1);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
         return lists;
-    }*/
+
+
+    }
     //Profil ------------------------------------------------------------------>>>
 
 
@@ -167,7 +186,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     public String insertAddWishlist(String username, String nameList, String privacy){
 
-        String check = "select colUsername from wishlists where colUsername='"+username+"' or colWishlistName='"+nameList+"'";
+        String check = "select colUsername from wishlists where colUsername='"+username+"' and colWishlistName='"+nameList+"'";
         Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
         int count = cursor.getCount();
         cursor.close();

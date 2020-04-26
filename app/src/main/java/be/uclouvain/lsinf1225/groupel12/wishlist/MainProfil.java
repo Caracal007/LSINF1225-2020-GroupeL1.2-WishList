@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
@@ -20,11 +22,25 @@ public class MainProfil extends AppCompatActivity {
 
         TextView session = (TextView) findViewById(R.id.session);
         session.setText(Session.getSession());
-
+        addWishlistsToTab(Session.getSession());
         allButton();
     }
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
 
+    private void addWishlistsToTab(String username) {
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        String Tab[] = mySQLiteOpenHelper.getLists(username);
+        if (Tab != null) {
+            for (int i = 0; i < Tab.length; i++) {
+                LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollWishlistsTab);
+                TextView wishlistName = new TextView(this);
+                wishlistName.setText(Tab[i]);
+                wishlistName.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT));
 
+                tableau.addView(wishlistName);
+            }
+        }
+    }
 
     /* *************** BUTTON *********************** */
     private void allButton(){
