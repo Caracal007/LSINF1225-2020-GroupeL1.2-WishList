@@ -53,6 +53,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         String creationItems = "create table items ("
                 + "name text not null,"
+                + "wishlist text not null,"
                 + "description text not null,"
                 + "price text not null,"
                 + "url text not null"
@@ -206,9 +207,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     //Add Gift ------------------------------------------------------------------>>>
 
-    public void addItem(String name, String description, String price, String url) {
-        String creation = "insert into items (name, description, price, url) values ('"
-                + name + "','" + description + "', '" + price + "','" + url + "')";
+    public void addItem(String name, String description, String price, String url, String wishlist) {
+        String creation = "insert into items (name, wishlist, description, price, url) values ('"
+                + name + "','" + wishlist + "','" + description + "', '" + price + "','" + url + "')";
         this.getWritableDatabase().execSQL(creation);
     }
 

@@ -113,6 +113,16 @@
                             android:textColorHint="@color/colorAccent" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <Spinner
+                        android:id="@+id/spinnerChooseWishlist"
+                        android:layout_width="350dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="#DADADA"
+                        android:dropDownWidth="match_parent"
+                        android:entries="@array/Wishlists"
+                        android:spinnerMode="dropdown" />
+
                 </LinearLayout>
             </LinearLayout>
 

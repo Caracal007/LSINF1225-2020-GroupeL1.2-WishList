@@ -53,4 +53,8 @@
         <item>Média</item>
         <item>Electronique</item>
     </string-array>
+
+    <string-array name="Wishlists">
+        //MySQLiteOpenHelper.getWishlists();
+    </string-array>
 </resources>
