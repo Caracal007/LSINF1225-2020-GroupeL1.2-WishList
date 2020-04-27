@@ -51,7 +51,7 @@ public class MainAddGift extends AppCompatActivity {
                 mySQLiteOpenHelper.addItem(name_txt, wishlist_txt, description_txt, price_txt, url_txt);
                 mySQLiteOpenHelper.close();
                 Toast.makeText(this, "Gift added", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, MainProfil.class);
+                Intent intent = new Intent(this, MainContentWishlist.class);
 
                 startActivity(intent);
             }
