@@ -37,6 +37,8 @@
     <connection id="eed295ce-ecba-4f73-be10-238cec1d58d8" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="eed295ce-ecba-4f73-be10-238cec1d58d8" dataset="main.wishlists" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="eed295ce-ecba-4f73-be10-238cec1d58d8" dataset="main.items" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="eed295ce-ecba-4f73-be10-238cec1d58d8" dataset="main.preferences" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="eed295ce-ecba-4f73-be10-238cec1d58d8" dataset="main.profil" active-filter-id="EMPTY_FILTER" />
   </component>
@@ -78,7 +80,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="C:\Users\maxim\Desktop\Wish.Inscription4" schema="main" />
+            <file path="C:\Users\maxim\Desktop\Wish.Inscription" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

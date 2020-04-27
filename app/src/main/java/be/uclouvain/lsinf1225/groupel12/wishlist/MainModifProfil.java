@@ -4,19 +4,58 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputEditText;
+
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 public class MainModifProfil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_modif_profil);
+        buttonAll();
+        Infos(Session.getSession());
+    }
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
+    private TextInputEditText txtFirst_name;
+    private TextInputEditText txtLast_name;
+    private TextInputEditText txtEmail;
+    private String recup1, recup2, recup3;
+
+    private void Infos(String username){
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        String tab[] = mySQLiteOpenHelper.recupInfo(username);
+        TextInputEditText firstnameinfo = (TextInputEditText) findViewById(R.id.Fisrtname);
+        firstnameinfo.setText(tab[0]);
+        TextInputEditText lastnameinfo = (TextInputEditText) findViewById(R.id.lastName);
+        lastnameinfo.setText(tab[1]);
+        TextInputEditText emailinfo = (TextInputEditText) findViewById(R.id.mail);
+        emailinfo.setText(tab[2]);
+    }
+
+    private void modifInfos(String username){
+        txtFirst_name = (TextInputEditText) findViewById(R.id.Fisrtname);
+        txtLast_name = (TextInputEditText) findViewById(R.id.lastName);
+        txtEmail = (TextInputEditText) findViewById(R.id.mail);
+        recup1 = txtFirst_name.getText().toString();
+        recup2 = txtLast_name.getText().toString();
+        recup3 = txtEmail.getText().toString();
+        mySQLiteOpenHelper.modifInfo(username, recup1, recup2, recup3);
+    }
+
+
+    /* Button All ---------------------------------------------------------------- */
+    private void buttonAll(){
         logout();
         down();
         modif();
-
     }
+    /* Button All ---------------------------------------------------------------- */
     /* Button logout ---------------------------------------------------------------- */
     private void logout() {
         findViewById(R.id.buttonLogout).setOnClickListener(new Button.OnClickListener(){
@@ -36,6 +75,7 @@ public class MainModifProfil extends AppCompatActivity {
         findViewById(R.id.ButtonTerminerModif).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 openActivityProfil();
+                modifInfos(Session.getSession());
             }
         })
         ;}

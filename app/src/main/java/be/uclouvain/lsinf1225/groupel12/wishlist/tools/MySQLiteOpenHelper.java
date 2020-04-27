@@ -213,6 +213,36 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     //Add Gift ------------------------------------------------------------------>>>
+
+    //Modif Profil ------------------------------------------------------------------>>>
+    public String[] recupInfo (String username){
+        String listinfo[] = new String[3];
+        String take = "select * from profil where colUsername='" + username + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        cursor.moveToFirst();
+        int j = 0;
+        for(int i =2; i <= 4; i++) {
+            if(!cursor.isAfterLast()) {
+                listinfo[j] = cursor.getString(i);
+                j++;
+            }
+            else{
+                cursor.close();
+            }
+        }
+        return listinfo;
+    }
+    public void modifInfo(String username, String first_name, String last_name, String email){
+
+        first_name = first_name.replace("'", "''");
+        last_name = last_name.replace("'", "''");
+        email = email.replace("'", "''");
+
+        String modif = "update profil set colFirst_name = '"+first_name+"' ,colLast_name = '"+last_name+"',colEmail = '"+email+"' where colUsername='"+username+"'";
+        this.getWritableDatabase().execSQL(modif);
+
+    }
+    //Modif Profil ------------------------------------------------------------------>>>
 }
 
 
