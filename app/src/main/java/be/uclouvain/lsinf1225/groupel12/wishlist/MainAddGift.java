@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
@@ -19,6 +20,7 @@ public class MainAddGift extends AppCompatActivity {
     EditText description;
     EditText price;
     EditText url;
+    private Spinner spinnerChooseWishlist;
     boolean isValid;
     private MySQLiteOpenHelper mySQLiteOpenHelper;
 
@@ -32,6 +34,7 @@ public class MainAddGift extends AppCompatActivity {
         description = findViewById(R.id.description);
         price = findViewById(R.id.price);
         url = findViewById(R.id.url);
+        spinnerChooseWishlist = findViewById(R.id.spinnerChooseWishlist);
         Button add = findViewById(R.id.add);
 
         bottomButton();
@@ -44,10 +47,11 @@ public class MainAddGift extends AppCompatActivity {
                 String description_txt = description.getText().toString();
                 String price_txt = price.getText().toString();
                 String url_txt = url.getText().toString();
-                mySQLiteOpenHelper.addItem(name_txt, description_txt, price_txt, url_txt);
+                String wishlist_txt = spinnerChooseWishlist.getSelectedItem().toString();
+                mySQLiteOpenHelper.addItem(name_txt, wishlist_txt, description_txt, price_txt, url_txt);
                 mySQLiteOpenHelper.close();
                 Toast.makeText(this, "Gift added", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, MainProfil.class);
+                Intent intent = new Intent(this, MainContentWishlist.class);
 
                 startActivity(intent);
             }

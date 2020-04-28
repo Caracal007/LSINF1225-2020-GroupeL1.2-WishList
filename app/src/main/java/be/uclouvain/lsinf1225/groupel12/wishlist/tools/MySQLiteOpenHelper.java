@@ -53,6 +53,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         String creationItems = "create table items ("
                 + "name text not null,"
+                + "wishlist text not null,"
                 + "description text not null,"
                 + "price text not null,"
                 + "url text not null"
@@ -101,7 +102,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     //Preferences ------------------------------------------------------------------>>>
     public void insertPreferences(String username, String couleur, String vetements, String chaussures, String theme, String adresse){
-
+        if(adresse == null){
+            adresse = " ";
+        }
         String check = "select colUsername from profil where colUsername='"+username+"'";
         Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
         int count = cursor.getCount();
@@ -124,6 +127,25 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(creation);
 
 
+    }
+    public String[] recupPrefs(String username){
+        String listPref[] = new String[5];
+        String take = "select * from preferences where colUsername='" + username + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        if(cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            int j = 0;
+            for (int i = 1; i <= 5; i++) {
+                if (!cursor.isAfterLast()) {
+                    listPref[j] = cursor.getString(i);
+                    j++;
+                } else {
+                    cursor.close();
+                }
+            }
+            return listPref;
+        }
+        return null;
     }
     //Preferences --------------------------2020-04-23 01:12:28.443 16472-16472/? E/upel12.wishlis: Unknown bits set in runtime_flags: 0x8000---------------------------------------->>>
 
@@ -206,13 +228,43 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     //Add Gift ------------------------------------------------------------------>>>
 
-    public void addItem(String name, String description, String price, String url) {
-        String creation = "insert into items (name, description, price, url) values ('"
-                + name + "','" + description + "', '" + price + "','" + url + "')";
+    public void addItem(String name, String description, String price, String url, String wishlist) {
+        String creation = "insert into items (name, wishlist, description, price, url) values ('"
+                + name + "','" + wishlist + "','" + description + "', '" + price + "','" + url + "')";
         this.getWritableDatabase().execSQL(creation);
     }
 
     //Add Gift ------------------------------------------------------------------>>>
+
+    //Modif Profil ------------------------------------------------------------------>>>
+    public String[] recupInfo (String username){
+        String listinfo[] = new String[3];
+        String take = "select * from profil where colUsername='" + username + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        cursor.moveToFirst();
+        int j = 0;
+        for(int i =2; i <= 4; i++) {
+            if(!cursor.isAfterLast()) {
+                listinfo[j] = cursor.getString(i);
+                j++;
+            }
+            else{
+                cursor.close();
+            }
+        }
+        return listinfo;
+    }
+    public void modifInfo(String username, String first_name, String last_name, String email){
+
+        first_name = first_name.replace("'", "''");
+        last_name = last_name.replace("'", "''");
+        email = email.replace("'", "''");
+
+        String modif = "update profil set colFirst_name = '"+first_name+"' ,colLast_name = '"+last_name+"',colEmail = '"+email+"' where colUsername='"+username+"'";
+        this.getWritableDatabase().execSQL(modif);
+
+    }
+    //Modif Profil ------------------------------------------------------------------>>>
 }
 
 
