@@ -61,6 +61,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL(creationItems);
         Log.i("DATABASE", "onCreate invoked");
+
+        String creationFriends = "create table friends ("
+                + "colSender not null,"
+                + "colReceptionist text not null,"
+                + "colState text not null"
+                + ")";
+
+        db.execSQL(creationFriends);
+        Log.i("DATABASE", "onCreate invoked");
     }
 
     @Override
@@ -265,6 +274,30 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     }
     //Modif Profil ------------------------------------------------------------------>>>
+
+    //Add Friend ------------------------------------------------------------------>>>
+    public boolean checkFriendName(String friendName){
+        friendName = friendName.replace("'", "''");
+        String take = "select * from profil where colUsername='" + friendName + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        if(cursor.getCount() != 0){
+            return true;
+        }
+        return false;
+    }
+    public boolean addFriend(String friendName){
+        String take = "select * from profil where colUsername='" + friendName + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        if(cursor.getCount() != 0 && !friendName.equals(Session.getSession())){
+            friendName = friendName.replace("'", "''");
+            String creation = "insert into friends (colSender, colReceptionist, colState) values ('"
+                    + Session.getSession() + "','" + friendName + "','" + "sended" + "')";
+            this.getWritableDatabase().execSQL(creation);
+            return true;
+        }
+        return false;
+    }
+    //Add Friend ------------------------------------------------------------------>>>
 }
 
 
