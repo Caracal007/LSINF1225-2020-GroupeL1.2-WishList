@@ -288,7 +288,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public boolean addFriend(String friendName){
         String take = "select * from profil where colUsername='" + friendName + "'";
         Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
-        if(cursor.getCount() != 0 && !friendName.equals(Session.getSession())){
+        String check = "select * from friends where (colSender='" + Session.getSession() + "' and colReceptionist='" + friendName + "') or (colSender='" + friendName + "' and colReceptionist='" + Session.getSession() + "')";
+        Cursor cursorcheck = this.getReadableDatabase().rawQuery(check, null);
+        if(cursorcheck.getCount() == 0 && cursor.getCount() != 0 && !friendName.equals(Session.getSession())){
             friendName = friendName.replace("'", "''");
             String creation = "insert into friends (colSender, colReceptionist, colState) values ('"
                     + Session.getSession() + "','" + friendName + "','" + "sended" + "')";
@@ -298,6 +300,31 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         return false;
     }
     //Add Friend ------------------------------------------------------------------>>>
+
+    //FriendNotification------------------------------------------------------------------>>>
+    public String[] getFriendsRequestsLists(String username) {
+        String state = "sended";
+        String take = "select colSender from friends where colReceptionist='" + username + "'and colState='" + state + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        int count = cursor.getCount();
+
+        if (count == 0) {
+            return null;
+        }
+        String lists[] = new String[count];
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            for (int i = 0; i < count; i++) {
+                lists[i] = cursor.getString(0);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return lists;
+    }
+    //FriendNotification------------------------------------------------------------------>>>
+
 }
 
 
