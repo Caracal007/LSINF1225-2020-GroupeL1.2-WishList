@@ -102,7 +102,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     //Preferences ------------------------------------------------------------------>>>
     public void insertPreferences(String username, String couleur, String vetements, String chaussures, String theme, String adresse){
-
+        if(adresse == null){
+            adresse = " ";
+        }
         String check = "select colUsername from profil where colUsername='"+username+"'";
         Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
         int count = cursor.getCount();
@@ -125,6 +127,25 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(creation);
 
 
+    }
+    public String[] recupPrefs(String username){
+        String listPref[] = new String[5];
+        String take = "select * from preferences where colUsername='" + username + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        if(cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            int j = 0;
+            for (int i = 1; i <= 5; i++) {
+                if (!cursor.isAfterLast()) {
+                    listPref[j] = cursor.getString(i);
+                    j++;
+                } else {
+                    cursor.close();
+                }
+            }
+            return listPref;
+        }
+        return null;
     }
     //Preferences --------------------------2020-04-23 01:12:28.443 16472-16472/? E/upel12.wishlis: Unknown bits set in runtime_flags: 0x8000---------------------------------------->>>
 
