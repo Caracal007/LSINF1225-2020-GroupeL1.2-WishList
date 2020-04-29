@@ -9,14 +9,33 @@
     <string name="connexion_btn">Button</string>
     <string name="inscription_btn">Button</string>
     <string name="recherche_d_amis">Recherche d\'amis</string>
+    <string name="Bouton_Add_Friend">"BoutonAddFriend"</string>
     <string name="output">output_search</string>
     <string name="output_search">output_search</string>
-    <string name="Ajouter_un_cadeau">"Ajouter un Cadeau"</string>
-    <string name="Nom_du_cadeau">"Nom du cadeau…"</string>
+    <string name="Ajouter_un_cadeau">"Add a whish"</string>
+    <string name="Nom_du_cadeau">"Name …"</string>
     <string name="Description">"Description…"</string>
-    <string name="Prix">"Prix…"</string>
+    <string name="Prix">"Price…"</string>
     <string name="URL">"URL…"</string>
     <string name="Add">"Add"</string>
+    <string name="Bouton_Profil">"BoutonProfil"</string>
+    <string name="Bouton_Wish">"BoutonWish"</string>
+    <string name="Bouton_Friend">"BoutonFriend"</string>
+    <string name="Whishlists1">"Wishlists"</string>
+    <string name="Background">"BG"</string>
+    <string name="Nom_de_l_ami">"Name of the friend"</string>
+    <string name="Bouton_Add_Image">"BoutonAddImage"</string>
+    <string name="Add_a_whishlist">"Add a wishlist"</string>
+    <string name="Bouton_Privacy">"Change privacy"</string>
+    <string name="Bouton_Privacy_img">"🔓"</string>
+    <string name="Bouton_Privacy_img2">"🔒"</string>
+    <string name="New_List_Name">"Please name the new whishlist"</string>
+    <string name="Friends">"Friends"</string>
+    <string name="Friends2">"Your friend list"</string>
+    <string name="Friends3">"To add new friends "</string>
+
+
+
 
     <string-array name="Color">
         <item>Aucune</item>
