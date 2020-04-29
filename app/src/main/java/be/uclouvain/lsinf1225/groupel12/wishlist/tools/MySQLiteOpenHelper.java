@@ -275,6 +275,36 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
     //Modif Profil ------------------------------------------------------------------>>>
 
+    //Friend ------------------------------------------------------------------>>>
+    public String[] getFriendList(String username){
+
+        String take = "select * from friends where (colSender='" + username + "' and colState='" + "Accepted" + "') or colReceptionist='" + username + "' and colState='" + "Accepted" + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        int count = cursor.getCount();
+
+        if (count == 0){
+            return null;
+        }
+        String lists[] = new String[count];
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            for (int i = 0; i < count; i++) {
+                if(cursor.getString(1).equals(username)) {
+                    lists[i] = cursor.getString(0);
+                }
+                else{
+                    lists[i] = cursor.getString(1);
+                }
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return lists;
+    }
+
+    //Friend ------------------------------------------------------------------>>>
+
     //Add Friend ------------------------------------------------------------------>>>
     public boolean checkFriendName(String friendName){
         friendName = friendName.replace("'", "''");
@@ -322,6 +352,18 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return lists;
+    }
+    public void requestAccepted(String username, String friendName){
+        friendName = friendName.replace("'", "''");
+
+        String modif = "update friends set colState = '"+"Accepted"+"'where colReceptionist='"+username+"' and colSender='"+friendName+"'";
+        this.getWritableDatabase().execSQL(modif);
+    }
+    public void requestDenied(String username, String friendName){
+        friendName = friendName.replace("'", "''");
+
+        String modif = "update friends set colState = '"+"Denied"+"'where colReceptionist='"+username+"' and colSender='"+friendName+"'";
+        this.getWritableDatabase().execSQL(modif);
     }
     //FriendNotification------------------------------------------------------------------>>>
 

@@ -12,11 +12,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
-public class MainFriendNotification extends AppCompatActivity {
+public class MainFriendNotification extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainFriendNotification extends AppCompatActivity {
         Tab = mySQLiteOpenHelper.getFriendsRequestsLists(username);
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
+
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollViewFriendsRequest);
                 LinearLayout group = new LinearLayout(this);
 
@@ -50,6 +52,14 @@ public class MainFriendNotification extends AppCompatActivity {
                 add.setImageResource(R.drawable.icons8_coche_100__1_);
                 ImageButton delete = new ImageButton(this);
                 delete.setImageResource(R.drawable.icons8_effacer_100);
+
+                add.setTag(Tab[i]);
+                add.setId(0);
+                add.setOnClickListener(this);
+
+                delete.setTag(Tab[i]);
+                delete.setId(-1);
+                delete.setOnClickListener(this);
 
                 LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(
                         0, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -126,6 +136,30 @@ public class MainFriendNotification extends AppCompatActivity {
         ;}
     public void openActivityFriend(){
         Intent intent = new Intent(this, MainFriend.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        String str=v.getTag().toString();
+        int id=v.getId();
+        for(int i = 0; i <Tab.length; i++) {
+            if (str.equals(Tab[i])) {
+                if (id == -1) {
+                    mySQLiteOpenHelper.requestDenied(Session.getSession(), Tab[i]);
+                    Toast.makeText(getApplicationContext(), "L'invitation de " +Tab[i] + " a été supprimée", Toast.LENGTH_LONG).show();
+                    openActivityFriendNotification();
+                }
+                else {
+                    mySQLiteOpenHelper.requestAccepted(Session.getSession(), Tab[i]);
+                    Toast.makeText(getApplicationContext(), Tab[i] + " a été ajouté à votre liste d'amis", Toast.LENGTH_LONG).show();
+                    openActivityFriendNotification();
+                }
+            }
+        }
+    }
+    public void openActivityFriendNotification(){
+        Intent intent = new Intent(this, MainFriendNotification.class);
         startActivity(intent);
     }
     /* Button Friend---------------------------------------------------------------- */

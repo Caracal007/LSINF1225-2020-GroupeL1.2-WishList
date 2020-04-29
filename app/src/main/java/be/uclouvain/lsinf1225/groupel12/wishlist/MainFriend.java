@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 public class MainFriend extends AppCompatActivity {
 
@@ -13,12 +17,36 @@ public class MainFriend extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_friend);
+        allButton();
+        addFriendlistsToTab(Session.getSession());
 
+    }
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
+
+    private void addFriendlistsToTab(String username) {
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        String Tab[] = mySQLiteOpenHelper.getFriendList(username);
+        if (Tab != null) {
+            for (int i = 0; i < Tab.length; i++) {
+                LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollFriendListTab);
+                Button friendName = new Button(this);
+                friendName.setText(Tab[i]);
+                friendName.setTextSize(20);
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                layoutParams.setMargins(45, 10, 30, 0);
+                friendName.setLayoutParams(layoutParams);
+                friendName.setTag(Tab[i]);
+                tableau.addView(friendName);
+            }
+        }
+    }
+
+    private void allButton(){
         bottomButton();
         buttonAddFriend();
         buttonFriendNotification();
     }
-
     /* Button FriendRequest---------------------------------------------------------------- */
     private void buttonFriendNotification() {
         findViewById(R.id.buttonFriendRequest).setOnClickListener(new Button.OnClickListener(){
