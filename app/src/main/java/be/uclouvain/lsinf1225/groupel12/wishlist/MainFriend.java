@@ -16,8 +16,22 @@ public class MainFriend extends AppCompatActivity {
 
         bottomButton();
         buttonAddFriend();
+        buttonFriendNotification();
     }
 
+    /* Button FriendRequest---------------------------------------------------------------- */
+    private void buttonFriendNotification() {
+        findViewById(R.id.buttonFriendRequest).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                openActivityFriendNotification();
+            }
+        })
+        ;}
+    public void openActivityFriendNotification(){
+        Intent intent = new Intent(this, MainFriendNotification.class);
+        startActivity(intent);
+    }
+    /* Button AddFriend---------------------------------------------------------------- */
     /* Button AddFriend---------------------------------------------------------------- */
     private void buttonAddFriend() {
         findViewById(R.id.buttonAddFriend).setOnClickListener(new Button.OnClickListener(){

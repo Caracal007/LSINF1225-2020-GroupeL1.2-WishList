@@ -6,78 +6,82 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
-public class MainProfil extends AppCompatActivity {
+public class MainFriendNotification extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_profil);
+        setContentView(R.layout.activity_main_friend_notification);
 
-        TextView session = (TextView) findViewById(R.id.session);
-        session.setText(Session.getSession());
-        addWishlistsToTab(Session.getSession());
-        allButton();
+        bottomButton();
+        addFriendsRequestToTab(Session.getSession());
     }
-    private MySQLiteOpenHelper mySQLiteOpenHelper;
 
-    private void addWishlistsToTab(String username) {
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
+    private String Tab[];
+    private void addFriendsRequestToTab(String username) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String Tab[] = mySQLiteOpenHelper.getLists(username);
+        Tab = mySQLiteOpenHelper.getFriendsRequestsLists(username);
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
-                LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollWishlistsTab);
-                Button wishlistName = new Button(this);
-                wishlistName.setText(Tab[i]);
-                wishlistName.setTextSize(20);
+                LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollViewFriendsRequest);
+                LinearLayout group = new LinearLayout(this);
+
+                TextView FriendsRequest = new TextView(this);
+                FriendsRequest.setText(Tab[i]);
+                FriendsRequest.setTextSize(30);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        0, LinearLayout.LayoutParams.WRAP_CONTENT);
                 layoutParams.setMargins(45, 10, 30, 0);
-                wishlistName.setLayoutParams(layoutParams);
-                wishlistName.setTag(Tab[i]);
-                tableau.addView(wishlistName);
+                layoutParams.weight = 0.6f;
+                FriendsRequest.setLayoutParams(layoutParams);
+
+                ImageButton add = new ImageButton(this);
+                add.setImageResource(R.drawable.icons8_coche_100__1_);
+                ImageButton delete = new ImageButton(this);
+                delete.setImageResource(R.drawable.icons8_effacer_100);
+
+                LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(
+                        0, LinearLayout.LayoutParams.WRAP_CONTENT);
+                layoutParams2.setMargins(45, 10, 10, 0);
+                layoutParams2.weight = 0.2f;
+                layoutParams2.gravity= Gravity.RIGHT;
+                LinearLayout.LayoutParams layoutParams4 = new LinearLayout.LayoutParams(
+                        0, LinearLayout.LayoutParams.WRAP_CONTENT);
+                layoutParams4.setMargins(10, 10, 30, 0);
+                layoutParams4.weight = 0.2f;
+                layoutParams4.gravity= Gravity.RIGHT;
+
+                add.setLayoutParams(layoutParams2);
+                delete.setLayoutParams(layoutParams4);
+                LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                group.setWeightSum(1f);
+                group.addView(FriendsRequest);
+                group.addView(add);
+                group.addView(delete);
+                group.setLayoutParams(layoutParams3);
+
+                tableau.addView(group);
             }
         }
     }
 
-    /* *************** BUTTON *********************** */
-    private void allButton(){
-        buttonModifProfil();
-        bottomButton();
-        buttonAddWishlist();
-    }
-    /* Button ModifProfil---------------------------------------------------------------- */
-    private void buttonModifProfil() {
-        findViewById(R.id.Modifprofil).setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-                openActivityModifProfil();
-            }
-        })
-        ;}
-    public void openActivityModifProfil(){
-        Intent intent = new Intent(this, MainModifProfil.class);
-        startActivity(intent);
-    }
-    /* Button ModifProfil---------------------------------------------------------------- */
-    /* Button AddWishlist---------------------------------------------------------------- */
-    private void buttonAddWishlist() {
-        findViewById(R.id.buttonAddWishlist).setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-                openActivityAddWishlist();
-            }
-        })
-        ;}
-    public void openActivityAddWishlist(){
-        Intent intent = new Intent(this, MainAddWishlist.class);
-        startActivity(intent);
-    }
-    /* Button AddWishlist---------------------------------------------------------------- */
+    /* Button Accepted---------------------------------------------------------------- */
+
+    /* Button Accepted---------------------------------------------------------------- */
+
 
     /* BOTTOM BUTTON */
     private void bottomButton(){
@@ -126,11 +130,4 @@ public class MainProfil extends AppCompatActivity {
     }
     /* Button Friend---------------------------------------------------------------- */
     /* BOTTOM BUTTON */
-    /* *************** BUTTON *********************** */
-
-    /* Button Retour---------------------------------------------------------------- */
-    public void onBackPressed() {
-        // do nothing.
-    }
-    /* Button Retour---------------------------------------------------------------- */
 }

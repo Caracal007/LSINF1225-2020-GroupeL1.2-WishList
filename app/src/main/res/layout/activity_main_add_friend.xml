@@ -81,18 +81,29 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/lightgrey"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
 
-                <SearchView
-                    android:id="@+id/searchView"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:iconifiedByDefault="false"
-                    android:queryHint="Search Here">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-                </SearchView>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/searchView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:hint="Rechercher un ami ..." />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    app:srcCompat="@android:drawable/ic_menu_search" />
 
             </LinearLayout>
 
@@ -104,6 +115,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/friendToAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -116,9 +128,9 @@
                 </TextView>
 
                 <ImageButton
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/addFriendButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="0.9"
                     app:srcCompat="@drawable/icons8_ajouter_96" />
 
