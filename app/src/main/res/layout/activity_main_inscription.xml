@@ -56,7 +56,8 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:hint="@string/InscriptionP"
-                    android:textColor="#FF9800" />
+                    android:textColor="#FF9800"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -73,7 +74,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:hint="@string/InscriptionN" />
+                    android:hint="@string/InscriptionN"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -89,7 +91,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:hint="@string/InscriptionM" />
+                    android:hint="@string/InscriptionM"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -106,7 +109,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:hint="@string/InscriptionPs" />
+                    android:hint="@string/InscriptionPs"
+                    android:textSize="24sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,7 +130,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/InscriptionPa"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -137,7 +142,7 @@
             android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:backgroundTint="#DADADA"
+            android:backgroundTint="#FF9800"
             android:gravity="center"
             android:text="@string/sinscrire"
             android:textColor="#000000"

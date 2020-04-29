@@ -7,22 +7,179 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/background3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/Background"
         android:scaleType="matrix"
-        android:src="@drawable/backgroundapp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:src="@drawable/backgroundapp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#DADADA"
+            android:contentDescription="@string/ModifProfile"
+            android:gravity="center"
+            android:text="@string/ModifProfile"
+            android:textColor="#000000"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#009E9A9A"
+                android:gravity="center"
+                android:textColorHint="#FF9800"
+                app:passwordToggleTint="#FFFFFF">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Fisrtname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:hint="@string/InscriptionP"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#009E9A9A"
+                android:gravity="center"
+                android:textColorHint="#FF9800"
+                app:passwordToggleTint="#FFFFFF">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:hint="@string/InscriptionN"
+                    android:textSize="24sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#009E9A9A"
+                android:gravity="center"
+                android:textColorHint="#FF9800"
+                app:passwordToggleTint="#FFFFFF">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:hint="@string/InscriptionM"
+                    android:textSize="24sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/ButtonTerminerModif"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="#FF9800"
+                        android:contentDescription="@string/ModifProfileF"
+                        android:text="@string/ModifProfileF"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/modifPref"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center|center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#FF9800"
+                        android:gravity="center"
+                        android:text="@string/ModifProfileM"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/buttonLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="#F5C60404"
+                        android:gravity="center"
+                        android:text="@string/ModifProfileD"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,216 +187,41 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#DADADA"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="0dp"
-                    android:layout_height="76dp"
-                    android:layout_weight="1"
-                    android:background="#DADADA"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Modification du Profil"
-                    android:textSize="30sp"
-                    android:visibility="visible"
-                    app:autoSizeTextType="none" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="9"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/buttonProfil"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="30dp"
-                android:background="#DCDADADA"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:contentDescription="@string/Bouton_Profil"
+                android:foregroundTint="#FF9800"
+                android:visibility="visible"
+                app:srcCompat="@drawable/icons8_utilisateur_96" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/buttonAddGift"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:contentDescription="@string/Bouton_Wish"
+                android:foregroundTint="#FF9800"
+                app:srcCompat="@drawable/icons8_ajouter_96" />
 
-                    <LinearLayout
-                        android:layout_width="369dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/buttonFriends"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:contentDescription="@string/Bouton_Friend"
+                android:foregroundTint="#FF9800"
+                android:visibility="visible"
+                app:srcCompat="@drawable/icons8_user_group_2_96" />
 
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:foregroundGravity="center_vertical|center_horizontal"
-                            android:visibility="visible"
-                            app:srcCompat="@drawable/icons8_utilisateur_96" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/buttonLogout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_weight="1"
-                            android:background="#00FFFFFF"
-                            android:gravity="clip_horizontal|center_horizontal|center_vertical"
-                            android:text="Déconnexion "
-                            android:textColor="#E40202" />
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="65dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="#009E9A9A"
-                        android:gravity="center"
-                        android:textColorHint="#FF9800"
-                        app:passwordToggleTint="#FFFFFF">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/Fisrtname"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Prénom................................................"
-                            android:inputType="textPersonName"
-                            android:textColor="#FFFFFF" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="65dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="#009E9A9A"
-                        android:gravity="center"
-                        android:textColorHint="#FF9800"
-                        app:passwordToggleTint="#FFFFFF">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/lastName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Nom de Famille....................................." />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="65dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="#009E9A9A"
-                        android:gravity="center"
-                        android:textColorHint="#FF9800"
-                        app:passwordToggleTint="#FFFFFF">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/mail"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:hint="Adresse Mail.........................................." />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/ButtonTerminerModif"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="20dp"
-                            android:layout_weight="1"
-                            android:background="#FF9C22"
-                            android:text="Terminer" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"></LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/modifPref"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_margin="20dp"
-                        android:layout_weight="1"
-                        android:background="#FF9C22"
-                        android:gravity="center"
-                        android:text="Modifier Préférences et Adresse" />
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

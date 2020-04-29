@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">TheWicher</string>
-    <string name="connexion">Log in</string>
+    <string name="connexion">Login</string>
     <string name="inscription">Registration</string>
     <string name="sinscrire">"Sign up"</string>
     <string name="Connexion">Connexion</string>
@@ -13,10 +13,10 @@
     <string name="output">output_search</string>
     <string name="output_search">output_search</string>
     <string name="Ajouter_un_cadeau">"Add a whish"</string>
-    <string name="Nom_du_cadeau">"Name …"</string>
-    <string name="Description">"Description…"</string>
-    <string name="Prix">"Price…"</string>
-    <string name="URL">"URL…"</string>
+    <string name="Nom_du_cadeau">"Name"</string>
+    <string name="Description">"Description"</string>
+    <string name="Prix">"Price"</string>
+    <string name="URL">"URL"</string>
     <string name="Add">"Add"</string>
     <string name="Bouton_Profil">"BoutonProfil"</string>
     <string name="Bouton_Wish">"BoutonWish"</string>
@@ -38,6 +38,10 @@
     <string name="InscriptionM">"Email adress "</string>
     <string name="InscriptionPs">"Pseudo "</string>
     <string name="InscriptionPa">"Password "</string>
+    <string name="ModifProfile">"Profile adjustement "</string>
+    <string name="ModifProfileF">"  Finished "</string>
+    <string name="ModifProfileM">"  Preferences and adress "</string>
+    <string name="ModifProfileD">"  Logout "</string>
 
 
 
