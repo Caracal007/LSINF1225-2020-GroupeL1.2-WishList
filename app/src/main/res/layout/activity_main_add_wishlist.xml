@@ -2,120 +2,140 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/background4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/Background"
         android:scaleType="matrix"
         android:src="@drawable/backgroundapp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="411dp"
+        tools:layout_editor_absoluteY="731dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Space
+        <TextView
+            android:id="@+id/textView10"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="0.5" />
-
-        <LinearLayout
-            android:layout_width="350dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:background="#DADADA"
+            android:contentDescription="@string/Add_a_whishlist"
+            android:gravity="center"
+            android:text="@string/Add_a_whishlist"
+            android:textColor="#000000"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="6"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="320dp"
-                android:layout_height="10dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="Ajouter une liste"
-                android:textColor="#FF9800"
-                android:textSize="24sp" />
-
-            <LinearLayout
-                android:layout_width="355dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtList_name"
-                        android:layout_width="280dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="right"
-                        android:background="#FFFFFF"
-                        android:gravity="center|left"
-                        android:hint=" Nom de la nouvelle liste" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <ToggleButton
-                    android:id="@+id/togglePrivacy"
-                    android:layout_width="55dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center|left"
-                    android:layout_weight="0.5"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:text="ToggleButton"
-                    android:textOff="🔓"
-                    android:textOn="🔒" />
-
-                <Space
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:textColorHint="#FF9800">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtList_name"
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:hint="@string/New_List_Name"
+                    android:textColor="#6C1A1A"
+                    android:textColorHint="@color/colorPrimaryDark" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ToggleButton
+                android:id="@+id/togglePrivacy"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5" />
+                android:layout_gravity="center"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:text="@string/Bouton_Privacy"
+                android:textOff="@string/Bouton_Privacy_img"
+                android:textOn="@string/Bouton_Privacy_img2" />
 
             <Button
                 android:id="@+id/buttonSaveNewList"
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"
-                android:backgroundTint="#EEEEEE"
-                android:text="Ajouter" />
+                android:backgroundTint="#DADADA"
+                android:gravity="center"
+                android:text="@string/Add"
+                android:textSize="18sp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5" />
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="1.5" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/buttonProfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:contentDescription="@string/Bouton_Profil"
+                android:foregroundTint="#FF9800"
+                android:visibility="visible"
+                app:srcCompat="@drawable/icons8_utilisateur_96" />
+
+            <ImageButton
+                android:id="@+id/buttonAddGift"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:contentDescription="@string/Bouton_Wish"
+                android:foregroundTint="#FF9800"
+                app:srcCompat="@drawable/icons8_ajouter_96" />
+
+            <ImageButton
+                android:id="@+id/buttonFriends"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:contentDescription="@string/Bouton_Friend"
+                android:foregroundTint="#FF9800"
+                android:visibility="visible"
+                app:srcCompat="@drawable/icons8_user_group_2_96" />
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
