@@ -49,6 +49,11 @@
     <string name="PrefA">" Address "</string>
     <string name="PrefAd">" Please write your address "</string>
     <string name="PrefU">"  Update  "</string>
+    <string name="ProfileV">"  Variable  "</string>
+    <string name="ProfileP">"  Profile  "</string>
+    <string name="ProfileW">"  Your wishlists   "</string>
+
+
 
 
 
