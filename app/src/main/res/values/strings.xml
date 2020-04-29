@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">TheWicher</string>
     <string name="connexion">Connexion</string>
-    <string name="inscription">Inscription</string>
-    <string name="sinscrire">"S'inscrire"</string>
+    <string name="inscription">Registration</string>
+    <string name="sinscrire">"Sign up"</string>
     <string name="Connexion">Connexion</string>
     <string name="pseudo">Pseudo...</string>
     <string name="mot_de_passe">Mot de passe...</string>
@@ -33,6 +33,11 @@
     <string name="Friends">"Friends"</string>
     <string name="Friends2">"Your friend list"</string>
     <string name="Friends3">"To add new friends "</string>
+    <string name="InscriptionP">"First name "</string>
+    <string name="InscriptionN">"Last name "</string>
+    <string name="InscriptionM">"Email adress "</string>
+    <string name="InscriptionPs">"Pseudo "</string>
+    <string name="InscriptionPa">"Password "</string>
 
 
 
