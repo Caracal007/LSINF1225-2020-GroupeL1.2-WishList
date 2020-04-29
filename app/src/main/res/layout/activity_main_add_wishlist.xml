@@ -62,6 +62,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:hint="@string/New_List_Name"
+                    android:textColor="#FFFFFFFF"
                     android:textColorHint="@color/colorPrimaryDark"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>

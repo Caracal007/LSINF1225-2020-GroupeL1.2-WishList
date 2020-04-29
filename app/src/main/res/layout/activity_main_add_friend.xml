@@ -94,7 +94,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:hint="Rechercher un ami ..." />
+                        android:hint="Rechercher un ami ..."
+                        android:textColor="#0E0E0E" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageButton
