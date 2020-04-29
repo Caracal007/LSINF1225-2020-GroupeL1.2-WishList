@@ -72,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#FF9800"
+                android:background="#FFFFFF"
                 android:gravity="center"
                 android:text="@string/Bouton_Privacy"
                 android:textOff="@string/Bouton_Privacy_img"

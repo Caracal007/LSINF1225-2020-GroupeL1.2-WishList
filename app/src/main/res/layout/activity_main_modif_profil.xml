@@ -42,14 +42,9 @@
                 android:id="@+id/buttonLogout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="0.15"
-                android:contentDescription="@string/ModifProfileD"
-                android:foreground="@android:drawable/ic_lock_power_off"
-                android:foregroundTint="#000000"
-                app:srcCompat="@drawable/Webp" />
+                android:layout_weight="0.2"
+                app:srcCompat="@drawable/power_" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -99,6 +94,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:hint="@string/InscriptionN"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,6 +115,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center|center_vertical"
                     android:hint="@string/InscriptionM"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -145,7 +142,7 @@
                         android:layout_height="0dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:background="#FF9800"
+                        android:background="#DADADA"
                         android:contentDescription="@string/ModifProfileF"
                         android:text="@string/ModifProfileF"
                         android:textColor="#000000"
@@ -162,7 +159,7 @@
                         android:layout_height="0dp"
                         android:layout_gravity="center|center_horizontal"
                         android:layout_weight="1"
-                        android:background="#FF9800"
+                        android:background="#DADADA"
                         android:gravity="center"
                         android:text="@string/ModifProfileM"
                         android:textColor="#000000"
