@@ -35,27 +35,34 @@
     <string name="Friends3">"To add new friends "</string>
     <string name="InscriptionP">"First name "</string>
     <string name="InscriptionN">"Last name "</string>
-    <string name="InscriptionM">"Email adress "</string>
+    <string name="InscriptionM">"Email address "</string>
     <string name="InscriptionPs">"Pseudo "</string>
     <string name="InscriptionPa">"Password "</string>
     <string name="ModifProfile">"Profile adjustement "</string>
     <string name="ModifProfileF">"  Finished "</string>
-    <string name="ModifProfileM">"  Preferences and adress "</string>
+    <string name="ModifProfileM">"  Preferences and address "</string>
     <string name="ModifProfileD">"  Logout "</string>
+    <string name="Pref">" Preferences  "</string>
+    <string name="PrefC">" Colour "</string>
+    <string name="PrefS">" Size "</string>
+    <string name="PrefT">" Theme "</string>
+    <string name="PrefA">" Address "</string>
+    <string name="PrefAd">" Please write your address "</string>
+    <string name="PrefU">"  Update  "</string>
 
 
 
 
     <string-array name="Color">
-        <item>Aucune</item>
-        <item>Rouge</item>
-        <item>Bleu</item>
-        <item>Jaune</item>
-        <item>Vert</item>
+        <item>None</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
     </string-array>
 
     <string-array name="TailleVetement">
-        <item>Aucune</item>
+        <item>None</item>
         <item>XS</item>
         <item>S</item>
         <item>M</item>
@@ -64,7 +71,7 @@
     </string-array>
 
     <string-array name="TailleChaussure">
-        <item>Aucune</item>
+        <item>None</item>
         <item>37-38</item>
         <item>38-39</item>
         <item>39-40</item>
@@ -74,12 +81,12 @@
     </string-array>
 
     <string-array name="Thèmes">
-        <item>Aucun</item>
-        <item>Jardin</item>
-        <item>Mobilier</item>
+        <item>None</item>
+        <item>Garden</item>
+        <item>Furniture</item>
         <item>Sport</item>
-        <item>Média</item>
-        <item>Electronique</item>
+        <item>Media</item>
+        <item>Devices</item>
     </string-array>
 
     <string-array name="Wishlists">
