@@ -85,5 +85,8 @@ public class MainLogin extends AppCompatActivity {
         }
 
     }
+    public void onBackPressed() {
+        // do nothing.
+    }
 
 }
