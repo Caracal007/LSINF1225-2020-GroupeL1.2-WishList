@@ -7,12 +7,20 @@ import android.text.TextUtils;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
 public class MainAddGift extends AppCompatActivity {
 
@@ -38,6 +46,7 @@ public class MainAddGift extends AppCompatActivity {
         Button add = findViewById(R.id.add);
 
         bottomButton();
+        setWishTab(Session.getSession());
 
         add.setOnClickListener(v -> {
             checkDataEntered();
@@ -51,14 +60,26 @@ public class MainAddGift extends AppCompatActivity {
                 mySQLiteOpenHelper.addItem(name_txt, wishlist_txt, description_txt, price_txt, url_txt);
                 mySQLiteOpenHelper.close();
                 Toast.makeText(this, "Gift added", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, MainContentWishlist.class);
+                Intent intent = new Intent(this, MainContentWishList.class);
 
                 startActivity(intent);
             }
         });
     }
+    public void setWishTab(String username){
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        String WishTab[] = mySQLiteOpenHelper.getLists(username);
+        ArrayList<String> wishList = new ArrayList<>();
+        if (WishTab != null) {
+            for (int i = 0; i <WishTab.length; i++) {
+                wishList.add(WishTab[i]);
+            }
+            Spinner spinner = (Spinner) findViewById(R.id.spinnerChooseWishlist);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, wishList);
+            spinner.setAdapter(adapter);
+        }
 
-
+    }
     /* BOTTOM BUTTON */
     private void bottomButton(){
         buttonAddGift();

@@ -54,10 +54,6 @@
     <string name="ProfileW">"  Your wishlists   "</string>
 
 
-
-
-
-
     <string-array name="Color">
         <item>None</item>
         <item>Red</item>
