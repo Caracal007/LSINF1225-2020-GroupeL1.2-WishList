@@ -6,18 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainLogin">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="false"
-        android:contentDescription="@string/Background"
-        android:scaleType="matrix"
-        android:src="@drawable/backgroundapp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00BCD4"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -26,6 +18,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="#DADADA"
+            android:fontFamily="serif"
             android:gravity="center"
             android:text="@string/Pref"
             android:textColor="#000000"
@@ -37,6 +30,11 @@
             android:layout_weight="4"
             android:gravity="center"
             android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,7 +50,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="@string/PrefC"
-                    android:textColor="#FF9800"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
                 <Spinner
@@ -79,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/PrefS"
-                    android:textColor="#FF9800"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
                 <Spinner
@@ -114,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/PrefT"
-                    android:textColor="#FF9800"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
                 <Spinner
@@ -144,9 +142,8 @@
                 android:hint="@string/PrefAd"
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
-                android:textAlignment="textStart"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#FF9800"
+                android:textColorHint="#FFFFFF"
                 android:textSize="24sp" />
 
         </LinearLayout>
@@ -154,24 +151,35 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="0.5" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.7"
             android:gravity="center"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/buttonMajPreferences"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:background="#DADADA"
-                android:text="@string/PrefU"
-                android:textSize="24sp" />
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="30dp"
+
+                android:layout_weight="0.6"
+                android:background="@drawable/roundedbutton"
+                android:backgroundTint="#FF9800"
+                android:gravity="center"
+                android:text="Update"
+                android:textColor="#000000"
+                android:textSize="18sp" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
 
         <LinearLayout
             android:layout_width="match_parent"

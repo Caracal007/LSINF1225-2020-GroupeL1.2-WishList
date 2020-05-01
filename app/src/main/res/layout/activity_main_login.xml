@@ -6,51 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".MainLogin">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/Background"
-        android:scaleType="matrix"
-        android:src="@drawable/backgroundapp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00BCD4"
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#DADADA"
-            android:gravity="center"
-            android:text="@string/connexion"
-            android:textColor="#000000"
-            android:textSize="36sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="875dp"
+            android:layout_height="220dp"
+            app:srcCompat="@drawable/thewisherlogo" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_weight="1"
             android:gravity="center|center_horizontal|center_vertical"
-            android:textColorHint="#FF9800">
+            android:textColorHint="#FFFFFF">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:hint="@string/pseudo"
+                android:hint="Username..."
                 android:textColor="#FFFFFF" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -60,9 +45,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColorHint="#FF9800"
+            android:textColorHint="#FFFFFF"
             app:passwordToggleTint="#FFFFFF">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -70,10 +57,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:hint="@string/mot_de_passe"
+                android:hint="Password..."
                 android:inputType="textPassword"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2" />
 
         <LinearLayout
 
@@ -81,7 +73,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_weight="0.8"
+            android:layout_weight="0.6"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -91,10 +83,12 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/roundedbutton"
                 android:backgroundTint="@color/colorPrimary"
                 android:gravity="center"
                 android:text="@string/connexion"
                 android:textSize="18sp" />
+
 
             <Button
                 android:id="@+id/inscription_btn"
@@ -102,15 +96,28 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/roundedbutton"
+                android:backgroundTint="#DADADA"
                 android:gravity="center"
                 android:text="@string/inscription"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="263dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/gift" />
+
+        <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.5" />
+            android:layout_weight="0.5" />
 
 
     </LinearLayout>

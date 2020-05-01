@@ -6,16 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/Background"
-        android:scaleType="matrix"
-        android:src="@drawable/backgroundapp"
-        tools:layout_editor_absoluteX="411dp"
-        tools:layout_editor_absoluteY="731dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,9 +16,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:background="#DADADA"
             android:contentDescription="@string/Add_a_whishlist"
+            android:fontFamily="serif"
             android:gravity="center"
             android:text="@string/Add_a_whishlist"
             android:textColor="#000000"
@@ -39,6 +30,7 @@
             android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_weight="6"
+            android:background="#00BCD4"
             android:orientation="vertical">
 
             <Space
@@ -51,55 +43,72 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="0.3"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="0.5"
                 android:gravity="center"
-                android:textColorHint="#FF9800">
+                android:textColorHint="#FFFFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtList_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
                     android:gravity="center"
-                    android:hint="@string/New_List_Name"
+                    android:hint="Name the new wishlist"
                     android:textColor="#FFFFFFFF"
-                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textColorHint="#FFFFFFFF"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <ToggleButton
-                android:id="@+id/togglePrivacy"
-                android:layout_width="wrap_content"
+            <Space
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="@string/Bouton_Privacy"
-                android:textOff="@string/Bouton_Privacy_img"
-                android:textOn="@string/Bouton_Privacy_img2" />
+                android:layout_weight="0.1" />
+
+            <Switch
+                android:id="@+id/switchPrivacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginRight="120dp"
+                android:text="Private"
+                android:textSize="25sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/buttonSaveNewList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_gravity="center"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/roundedbutton"
                 android:backgroundTint="#FF9800"
                 android:gravity="center"
-                android:text="@string/Add"
+                android:text="Add Wishlist"
+                android:textColor="#000000"
                 android:textSize="18sp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="1" />
+                android:layout_weight="0.2" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:orientation="horizontal">
 
             <ImageButton

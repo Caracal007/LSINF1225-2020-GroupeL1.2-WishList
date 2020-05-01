@@ -6,23 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainLogin">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/Background"
-        android:scaleType="matrix"
-        android:src="@drawable/backgroundapp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00BCD4"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:background="#DADADA"
             android:orientation="horizontal">
 
@@ -43,6 +36,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#DADADA"
+                android:fontFamily="serif"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/ProfileP"
                 android:textColor="#000000"
@@ -65,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="6"
+            android:backgroundTint="#00BCD4"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
 
@@ -74,26 +69,27 @@
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="#DCDADADA"
+                android:background="#00DADADA"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="10dp"
-                    android:layout_weight="0.6"
+                    android:layout_weight="0.3"
+                    android:fontFamily="cursive"
                     android:gravity="center"
                     android:text="@string/ProfileW"
                     android:textColor="#000000"
-                    android:textSize="30sp" />
+                    android:textSize="40sp" />
 
                 <ScrollView
                     android:id="@+id/ScrollWishlists"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="291dp"
                     android:layout_weight="5">
 
                     <LinearLayout
@@ -111,9 +107,10 @@
                     android:layout_gravity="end"
                     android:layout_marginHorizontal="25dp"
                     android:layout_marginVertical="20dp"
+                    android:layout_weight="0.1"
                     android:background="#00DADADA"
                     android:contentDescription="@string/Add_a_whishlist"
-                    app:srcCompat="@drawable/icons8_ajouter_96" />
+                    app:srcCompat="@drawable/icons_ajouter_une_rgle_" />
 
             </LinearLayout>
         </LinearLayout>
@@ -122,7 +119,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:gravity="bottom|center_horizontal|end"
             android:orientation="horizontal">
 

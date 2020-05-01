@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -27,12 +28,12 @@ public class MainAddWishlist extends AppCompatActivity{
     private MySQLiteOpenHelper mySQLiteOpenHelper;
 
     private TextInputEditText txtList_name;
-    private ToggleButton togglePrivacy;
+    private Switch togglePrivacy;
     private String recup1, recup2, session;
 
     private void initAddWishlist(){
         txtList_name = (TextInputEditText) findViewById(R.id.txtList_name);
-        togglePrivacy = (ToggleButton) findViewById(R.id.togglePrivacy);
+        togglePrivacy = (Switch) findViewById(R.id.switchPrivacy);
         buttonSaveNewList();
         bottomButton();
     }

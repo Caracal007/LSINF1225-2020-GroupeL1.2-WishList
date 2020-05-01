@@ -6,17 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/Background"
-        android:scaleType="matrix"
-        android:src="@drawable/backgroundapp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00BCD4"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -27,12 +20,18 @@
             android:background="#DADADA"
             android:orientation="horizontal">
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3" />
+
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/ModifProfile"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:text="@string/ModifProfile"
                 android:textColor="#000000"
@@ -45,6 +44,11 @@
                 android:layout_weight="0.2"
                 app:srcCompat="@drawable/power_" />
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -53,15 +57,21 @@
             android:layout_weight="6"
             android:orientation="vertical">
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#009E9A9A"
                 android:gravity="center"
-                android:textColorHint="#FF9800"
+                android:textColorHint="#FFFFFF"
                 app:passwordToggleTint="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -80,11 +90,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#009E9A9A"
                 android:gravity="center"
-                android:textColorHint="#FF9800"
+                android:textColorHint="#FFFFFF"
                 app:passwordToggleTint="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -102,11 +113,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#009E9A9A"
                 android:gravity="center"
-                android:textColorHint="#FF9800"
+                android:textColorHint="#FFFFFF"
                 app:passwordToggleTint="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -119,21 +131,21 @@
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:orientation="horizontal">
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <Button
@@ -141,8 +153,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
                         android:layout_weight="1"
-                        android:background="#DADADA"
+                        android:background="@drawable/roundedbutton"
+                        android:backgroundTint="#DADADA"
                         android:contentDescription="@string/ModifProfileF"
                         android:text="@string/ModifProfileF"
                         android:textColor="#000000"
@@ -151,38 +166,31 @@
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <Button
                         android:id="@+id/modifPref"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center|center_horizontal"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
                         android:layout_weight="1"
-                        android:background="#DADADA"
+                        android:background="@drawable/roundedbutton"
+                        android:backgroundTint="#FF9800"
                         android:gravity="center"
                         android:text="@string/ModifProfileM"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
-
                 </LinearLayout>
 
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
 
         </LinearLayout>
 

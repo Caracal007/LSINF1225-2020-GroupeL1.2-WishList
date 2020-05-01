@@ -6,24 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainAddGift">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/Background"
-        android:scaleType="matrix"
-        app:srcCompat="@drawable/backgroundapp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00BCD4"
         android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.15"
+            android:layout_weight="1.5"
             android:orientation="vertical">
 
             <TextView
@@ -33,21 +26,29 @@
                 android:layout_weight="5"
                 android:background="#DADADA"
                 android:contentDescription="@string/Ajouter_un_cadeau"
+                android:fontFamily="serif"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/Ajouter_un_cadeau"
                 android:textColor="#000000"
                 android:textSize="36sp"
                 tools:text="@string/Ajouter_un_cadeau" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/name_txt"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="3.75"
                 android:gravity="center"
                 android:hint="@string/Nom_du_cadeau"
-                android:textColorHint="@color/colorPrimary">
+                android:textColorHint="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/name"
@@ -64,10 +65,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="3.75"
                 android:gravity="center"
                 android:hint="@string/Description"
-                android:textColorHint="@color/colorPrimary">
+                android:textColorHint="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/description"
@@ -84,10 +87,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="3.75"
                 android:gravity="center"
                 android:hint="@string/URL"
-                android:textColorHint="@color/colorPrimary">
+                android:textColorHint="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/url"
@@ -104,10 +109,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="3.75"
                 android:gravity="center"
                 android:hint="@string/Prix"
-                android:textColorHint="@color/colorPrimary">
+                android:textColorHint="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/price"
@@ -120,13 +127,18 @@
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="3.75"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="2.5"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -135,8 +147,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_gravity="center"
-                    android:layout_weight="3.75"
-                    android:background="#DADADA"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/roundedbutton"
+                    android:backgroundTint="#DADADA"
                     android:dropDownWidth="match_parent"
                     android:entries="@array/Wishlists"
                     android:spinnerMode="dropdown" />
@@ -153,7 +166,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4.5"
+                android:layout_weight="1.5"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -171,7 +184,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4.5"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -179,17 +192,30 @@
 
                 <Button
                     android:id="@+id/add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="30dp"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/roundedbutton"
+                    android:backgroundTint="#FF9800"
+                    android:gravity="center"
+                    android:text="Add"
+                    android:textColor="#000000"
                     android:textSize="18sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.6" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_weight="1"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
