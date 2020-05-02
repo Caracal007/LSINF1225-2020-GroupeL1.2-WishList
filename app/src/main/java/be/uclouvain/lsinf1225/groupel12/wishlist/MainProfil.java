@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.StringMemory;
 
-public class MainProfil extends AppCompatActivity {
+public class MainProfil extends AppCompatActivity implements  View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +29,18 @@ public class MainProfil extends AppCompatActivity {
         allButton();
     }
     private MySQLiteOpenHelper mySQLiteOpenHelper;
-
+    private String Tab[];
     private void addWishlistsToTab(String username) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String Tab[] = mySQLiteOpenHelper.getLists(username);
+        Tab = mySQLiteOpenHelper.getLists(username);
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollWishlistsTab);
                 Button wishlistName = new Button(this);
                 wishlistName.setText(Tab[i]);
+                wishlistName.setTag(Tab[i]);
+                wishlistName.setId(i);
+                wishlistName.setOnClickListener(this);
                 wishlistName.setTextSize(20);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -131,6 +137,19 @@ public class MainProfil extends AppCompatActivity {
     /* Button Retour---------------------------------------------------------------- */
     public void onBackPressed() {
         // do nothing.
+    }
+
+    @Override
+    public void onClick(View v) {
+        String str=v.getTag().toString();
+        for(int i = 0; i <Tab.length; i++) {
+            if (str.equals(Tab[i])) {
+                StringMemory.initStringMemory(str);
+                Intent intent = new Intent(this, MainContentWishList.class);
+                startActivity(intent);
+            }
+        }
+
     }
     /* Button Retour---------------------------------------------------------------- */
 }
