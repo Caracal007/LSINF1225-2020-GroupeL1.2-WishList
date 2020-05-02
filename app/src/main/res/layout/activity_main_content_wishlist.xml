@@ -101,6 +101,13 @@
                         android:textColor="#000000"
                         android:textSize="40sp" />
 
+                    <ImageView
+                        android:id="@+id/imagePrivacyWishlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5"
+                        app:srcCompat="@drawable/icons8_user_group_2_96" />
+
                 </LinearLayout>
 
                 <ScrollView

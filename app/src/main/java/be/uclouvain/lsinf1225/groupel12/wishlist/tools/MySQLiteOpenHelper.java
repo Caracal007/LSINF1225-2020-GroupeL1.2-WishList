@@ -45,7 +45,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         String creationWishlist= "create table wishlists ("
                 + "colUsername text not null,"
                 + "colWishlistName text not null,"
-                + "colPrivacy boolean not null"
+                + "colPrivacy text not null"
                 + ")";
 
         db.execSQL(creationWishlist);
@@ -222,11 +222,10 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         if (count == 0) {
             nameList = nameList.replace("'", "''");
-
+            privacy = privacy.replace("'", "''");
             String creation = "insert into wishlists (colUsername, colWishlistName, colPrivacy) values ('"
                     + username + "','" + nameList + "','" + privacy + "')";
             this.getWritableDatabase().execSQL(creation);
-            Log.i("DATABASE", String.valueOf(count));
 
             return null;
         }
@@ -396,6 +395,20 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         return lists;
     }
     //ContentWishlist--------------------------------------------------------------------->>>
+
+    //Wishlist--------------------------------------------------------------------->>>
+    public boolean getPrivacy(String username, String wishlistName){
+        String take = "select * from wishlists where colUsername='" + username + "' and colWishlistName ='" + wishlistName + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        if(cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            if (cursor.getString(2).equals("ON")) {
+                return true;
+            }
+        }
+        return false;
+    }
+    //Wishlist--------------------------------------------------------------------->>>
 
 }
 

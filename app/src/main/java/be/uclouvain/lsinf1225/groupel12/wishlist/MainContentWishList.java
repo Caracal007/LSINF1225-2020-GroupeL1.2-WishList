@@ -1,5 +1,6 @@
 package be.uclouvain.lsinf1225.groupel12.wishlist;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +26,8 @@ public class MainContentWishList extends AppCompatActivity /*implements View.OnC
 
         bottomButton();
 
+        setPrivacy(Session.getSession(), StringMemory.getStringMemory());
+
         titleWishlist = (TextView)findViewById(R.id.textNamewishlistTitle);
         titleWishlist.setText(StringMemory.getStringMemory());
     }
@@ -34,10 +38,8 @@ public class MainContentWishList extends AppCompatActivity /*implements View.OnC
     private void addItemsToTab(String username, String wishlist) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         String Tab[] = mySQLiteOpenHelper.getItems(username, wishlist);
-        Log.i("TAG", "lol");
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
-                Log.i("TAG", Tab[i]);
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollItemsTab);
                 Button giftName = new Button(this);
                 giftName.setText(Tab[i]);
@@ -52,6 +54,18 @@ public class MainContentWishList extends AppCompatActivity /*implements View.OnC
             }
         }
     }
+    /* Set Privacy---------------------------------------------------------------- */
+    private void setPrivacy(String username, String whishlistName){
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        ImageView Privacy = findViewById(R.id.imagePrivacyWishlist);
+        if(mySQLiteOpenHelper.getPrivacy(username, whishlistName)){
+            Privacy.setImageResource(R.drawable.icons8_cadenas_64);
+        }
+        else {
+            Privacy.setImageResource(R.drawable.icons8_user_group_2_96);
+        }
+    }
+    /* Set Privacy---------------------------------------------------------------- */
 
     /* *************** BUTTON *********************** */
     /* BOTTOM BUTTON */

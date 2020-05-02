@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -28,19 +31,19 @@ public class MainAddWishlist extends AppCompatActivity{
     private MySQLiteOpenHelper mySQLiteOpenHelper;
 
     private TextInputEditText txtList_name;
-    private Switch togglePrivacy;
-    private String recup1, recup2, session;
+    private CheckBox switchPrivacy;
+    private String recup1, session, recup2;
 
     private void initAddWishlist(){
         txtList_name = (TextInputEditText) findViewById(R.id.txtList_name);
-        togglePrivacy = (Switch) findViewById(R.id.switchPrivacy);
         buttonSaveNewList();
         bottomButton();
     }
 
-    private void AddWishList(){
+    private void AddWishList(String privacy){
         recup1 = txtList_name.getText().toString();
-        recup2 = togglePrivacy.getText().toString();
+        recup2 = privacy;
+
         session = Session.getSession();
 
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
@@ -55,12 +58,24 @@ public class MainAddWishlist extends AppCompatActivity{
         mySQLiteOpenHelper.close();
     }
 
+
+
     private void buttonSaveNewList() {
-        ((Button) findViewById(R.id.buttonSaveNewList)).setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                AddWishList();
+        switchPrivacy = (CheckBox) findViewById(R.id.switchPrivacy);
+        ((Button) findViewById(R.id.buttonSaveNewList)).setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (switchPrivacy.isChecked()) {
+                        AddWishList("ON");
+                        openActivityProfil();
+                    } else {
+                        AddWishList("OFF");
+                        openActivityProfil();
+                    }
+                }
             }
-        });
+        );
     }
 
 

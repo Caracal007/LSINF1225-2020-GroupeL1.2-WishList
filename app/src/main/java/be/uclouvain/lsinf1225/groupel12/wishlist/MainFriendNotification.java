@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -87,10 +88,6 @@ public class MainFriendNotification extends AppCompatActivity implements View.On
             }
         }
     }
-
-    /* Button Accepted---------------------------------------------------------------- */
-
-    /* Button Accepted---------------------------------------------------------------- */
 
 
     /* BOTTOM BUTTON */
