@@ -57,7 +57,7 @@ public class MainAddGift extends AppCompatActivity {
                 String price_txt = price.getText().toString();
                 String url_txt = url.getText().toString();
                 String wishlist_txt = spinnerChooseWishlist.getSelectedItem().toString();
-                mySQLiteOpenHelper.addItem(name_txt, wishlist_txt, description_txt, price_txt, url_txt);
+                mySQLiteOpenHelper.addItem(name_txt, description_txt, price_txt, url_txt, wishlist_txt, Session.getSession());
                 mySQLiteOpenHelper.close();
                 Toast.makeText(this, "Gift added", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(this, MainContentWishList.class);

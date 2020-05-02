@@ -56,7 +56,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
                 + "wishlist text not null,"
                 + "description text not null,"
                 + "price text not null,"
-                + "url text not null"
+                + "url text not null,"
+                + "username text not null"
                 + ")";
 
         db.execSQL(creationItems);
@@ -237,9 +238,13 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     //Add Gift ------------------------------------------------------------------>>>
 
-    public void addItem(String name, String description, String price, String url, String wishlist) {
-        String creation = "insert into items (name, wishlist, description, price, url) values ('"
-                + name + "','" + wishlist + "','" + description + "', '" + price + "','" + url + "')";
+    public void addItem(String name, String description, String price, String url, String wishlist, String username) {
+        name = name.replace("'", "''");
+        description = description.replace("'", "''");
+        price = price.replace("'", "''");
+        url = url.replace("'", "''");
+        String creation = "insert into items (name, wishlist, description, price, url, username) values ('"
+                + name + "','" + wishlist + "','" + description + "', '" + price + "','" + url + "','" + username + "')";
         this.getWritableDatabase().execSQL(creation);
     }
 
@@ -371,7 +376,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     //ContentWishlist--------------------------------------------------------------------->>>
     public String[] getItems(String username, String namelist){
 
-        String take = "select * from wishlists where colUsername='" + username + "' and colWishlistName ='" + namelist + "'";
+        String take = "select * from items where username='" + username + "' and wishlist ='" + namelist + "'";
         Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
         int count = cursor.getCount();
 
@@ -383,7 +388,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             for (int i = 0; i < count; i++) {
-                lists[i] = cursor.getString(1);
+                lists[i] = cursor.getString(0);
                 cursor.moveToNext();
             }
         }

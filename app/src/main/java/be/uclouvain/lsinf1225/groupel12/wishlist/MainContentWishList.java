@@ -4,42 +4,51 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.StringMemory;
 
-public class MainContentWishList extends AppCompatActivity implements View.OnClickListener {
+public class MainContentWishList extends AppCompatActivity /*implements View.OnClickListener*/ {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_content_wishlist);
         addItemsToTab(Session.getSession(), StringMemory.getStringMemory());
-    }
 
+        bottomButton();
+
+        titleWishlist = (TextView)findViewById(R.id.textNamewishlistTitle);
+        titleWishlist.setText(StringMemory.getStringMemory());
+    }
+    private TextView titleWishlist;
     private MySQLiteOpenHelper mySQLiteOpenHelper;
     private String Tab[];
 
     private void addItemsToTab(String username, String wishlist) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         String Tab[] = mySQLiteOpenHelper.getItems(username, wishlist);
+        Log.i("TAG", "lol");
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
+                Log.i("TAG", Tab[i]);
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollItemsTab);
-                Button wishlistName = new Button(this);
-                wishlistName.setText(Tab[i]);
-                wishlistName.setOnClickListener(this);
-                wishlistName.setTextSize(20);
+                Button giftName = new Button(this);
+                giftName.setText(Tab[i]);
+                /*wishlistName.setOnClickListener(this);*/
+                giftName.setTextSize(20);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 layoutParams.setMargins(45, 10, 30, 0);
-                wishlistName.setLayoutParams(layoutParams);
-                wishlistName.setTag(Tab[i]);
-                tableau.addView(wishlistName);
+                giftName.setLayoutParams(layoutParams);
+                giftName.setTag(Tab[i]);
+                tableau.addView(giftName);
             }
         }
     }
@@ -94,12 +103,7 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
     /* BOTTOM BUTTON */
     /* *************** BUTTON *********************** */
 
-    /* Button Retour---------------------------------------------------------------- */
-    public void onBackPressed() {
-        // do nothing.
-    }
-
-    @Override
+    /*@Override
     public void onClick(View v) {
         String str = v.getTag().toString();
         for (int i = 0; i <Tab.length; i++){
@@ -110,6 +114,6 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
             }
         }
 
-    }
+    }*/
     /* Button Retour---------------------------------------------------------------- */
 }
