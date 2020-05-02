@@ -367,6 +367,31 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
     //FriendNotification------------------------------------------------------------------>>>
 
+
+    //ContentWishlist--------------------------------------------------------------------->>>
+    public String[] getItems(String username, String namelist){
+
+        String take = "select * from wishlists where colUsername='" + username + "' and colWishlistName ='" + namelist + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        int count = cursor.getCount();
+
+        if (count == 0){
+            return null;
+        }
+        String lists[] = new String[count];
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            for (int i = 0; i < count; i++) {
+                lists[i] = cursor.getString(1);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return lists;
+    }
+    //ContentWishlist--------------------------------------------------------------------->>>
+
 }
 
 

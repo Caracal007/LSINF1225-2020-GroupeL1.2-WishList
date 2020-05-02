@@ -6,7 +6,7 @@ public class StringMemory {
     static public void initStringMemory(String username){
         stringmemory = username;
     }
-    static public String getStringmemory(){
+    static public String getStringMemory(){
         return stringmemory;
     }
 }
