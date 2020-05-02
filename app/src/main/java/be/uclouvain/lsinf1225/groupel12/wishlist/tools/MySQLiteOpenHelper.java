@@ -371,6 +371,12 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
     //FriendNotification------------------------------------------------------------------>>>
 
+    //WishlistFriands--------------------------------------------------------------------->>>
+
+
+
+    //WishlistFriands--------------------------------------------------------------------->>>
+
 
     //ContentWishlist--------------------------------------------------------------------->>>
     public String[] getItems(String username, String namelist){
