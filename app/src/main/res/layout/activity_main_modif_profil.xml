@@ -16,8 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#DADADA"
+            android:layout_weight="0.9"
+            android:background="#FFFFFF"
             android:orientation="horizontal">
 
             <Space
@@ -35,13 +35,14 @@
                 android:gravity="center"
                 android:text="@string/ModifProfile"
                 android:textColor="#000000"
-                android:textSize="36sp" />
+                android:textSize="34sp" />
 
             <ImageButton
                 android:id="@+id/buttonLogout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
+                android:backgroundTint="#00FFFFFF"
                 app:srcCompat="@drawable/power_" />
 
             <Space
@@ -157,7 +158,7 @@
                         android:layout_marginRight="30dp"
                         android:layout_weight="1"
                         android:background="@drawable/roundedbutton"
-                        android:backgroundTint="#DADADA"
+                        android:backgroundTint="#FFFFFF"
                         android:contentDescription="@string/ModifProfileF"
                         android:text="@string/ModifProfileF"
                         android:textColor="#000000"
@@ -197,7 +198,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:orientation="horizontal">
 
             <ImageButton

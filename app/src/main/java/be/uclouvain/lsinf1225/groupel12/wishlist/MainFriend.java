@@ -10,8 +10,9 @@ import android.widget.LinearLayout;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.StringMemory;
 
-public class MainFriend extends AppCompatActivity {
+public class MainFriend extends AppCompatActivity implements  View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,24 +23,42 @@ public class MainFriend extends AppCompatActivity {
 
     }
     private MySQLiteOpenHelper mySQLiteOpenHelper;
+    private String Tab[];
 
     private void addFriendlistsToTab(String username) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String Tab[] = mySQLiteOpenHelper.getFriendList(username);
+        Tab = mySQLiteOpenHelper.getFriendList(username);
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollFriendListTab);
                 Button friendName = new Button(this);
                 friendName.setText(Tab[i]);
+                friendName.setTag(Tab[i]);
+                friendName.setId(i);
+                friendName.setOnClickListener(this);
                 friendName.setTextSize(20);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 layoutParams.setMargins(45, 10, 30, 0);
                 friendName.setLayoutParams(layoutParams);
                 friendName.setTag(Tab[i]);
+                friendName.setBackgroundResource(R.drawable.roundedbutton);
                 tableau.addView(friendName);
             }
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        String str=v.getTag().toString();
+        for(int i = 0; i <Tab.length; i++) {
+            if (str.equals(Tab[i])) {
+                StringMemory.initStringMemoryFriendName(str);
+                Intent intent = new Intent(this, MainWishlistFriend.class);
+                startActivity(intent);
+            }
+        }
+
     }
 
     private void allButton(){

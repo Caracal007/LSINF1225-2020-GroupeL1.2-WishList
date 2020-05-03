@@ -22,8 +22,8 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -39,7 +39,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#DADADA"
+                    android:background="#FFFFFF"
                     android:baselineAligned="false"
                     android:fontFamily="serif"
                     android:gravity="center_horizontal|center_vertical"
@@ -59,18 +59,24 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:layout_weight="0.5"
+            android:layout_height="0dp"
+            android:layout_weight="6"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
+                android:layout_weight="0.5"
                 android:background="@drawable/roundedbutton"
-                android:backgroundTint="#DADADA"
+                android:backgroundTint="#FFFFFF"
                 android:orientation="horizontal">
 
 
@@ -100,23 +106,22 @@
 
             </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="60dp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
+                android:layout_weight="0.5"
                 android:background="@drawable/roundedbutton"
                 android:backgroundTint="#FF9800"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/friendToAdd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="3"
                     android:padding="10dp"
@@ -137,73 +142,68 @@
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5" />
+
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal|end"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
+            android:background="#FF9800"
+            android:gravity="center_horizontal|center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/buttonProfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF9800"
+                    app:srcCompat="@drawable/icons8_utilisateur_96" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/buttonAddGift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF9800"
+                    app:srcCompat="@drawable/icons8_ajouter_96" />
+            </LinearLayout>
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="76dp"
-                android:background="#FF9800"
-                android:gravity="center_horizontal|center_vertical">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                <ImageButton
+                    android:id="@+id/buttonFriends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/buttonProfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#FF9800"
-                        app:srcCompat="@drawable/icons8_utilisateur_96" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/buttonAddGift"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#FF9800"
-                        app:srcCompat="@drawable/icons8_ajouter_96" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/buttonFriends"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#FF9800"
-                        app:srcCompat="@drawable/icons8_user_group_2_96" />
-                </LinearLayout>
-
+                    android:background="#FF9800"
+                    app:srcCompat="@drawable/icons8_user_group_2_96" />
             </LinearLayout>
 
         </LinearLayout>

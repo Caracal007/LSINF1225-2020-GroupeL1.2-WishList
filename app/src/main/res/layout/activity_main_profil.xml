@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.9"
-            android:background="#DADADA"
+            android:background="#FFFFFF"
             android:orientation="horizontal">
 
             <TextView
@@ -28,6 +28,7 @@
                 android:contentDescription="@string/ProfileV"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/ProfileV"
+                android:textColor="#000000"
                 android:textSize="18sp" />
 
 
@@ -35,7 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#DADADA"
+                android:background="#00FFFFFF"
                 android:fontFamily="serif"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/ProfileP"
@@ -47,7 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.75"
-                android:background="#DADADA"
+                android:background="#00FFFFFF"
                 android:baselineAligned="false"
                 android:contentDescription="@string/ModifProfile"
                 app:srcCompat="@drawable/icons8_engrenage_64" />

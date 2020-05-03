@@ -4,7 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFriend">
+    tools:context=".MainContentWishlistFriend">
+
+    <ImageView
+        android:id="@+id/background5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="matrix"
+        android:src="@drawable/backgroundapp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,21 +39,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#DADADA"
+                android:layout_weight="0.9"
+                android:background="#FFFFFF"
                 android:orientation="horizontal">
 
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textNameFriendProfil"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.9"
                     android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
                     android:baselineAligned="false"
                     android:fontFamily="serif"
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="12sp"
-                    android:text="Demandes d'amis"
+                    android:text="friend_name"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -58,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="6"
+            android:backgroundTint="#00BCD4"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
 
@@ -65,54 +81,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="40dp"
-                android:background="#00BCD4"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#00DADADA"
                 android:orientation="vertical">
 
-                <Space
+                <TextView
+                    android:id="@+id/NameFriendWishlist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.05" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_weight="0.15"
-                    android:orientation="horizontal">
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="10dp"
-                        android:layout_weight="1"
-                        android:fontFamily="cursive"
-                        android:text="Demandes:"
-                        android:textAlignment="textStart"
-                        android:textColor="#000000"
-                        android:textSize="40sp" />
-
-                </LinearLayout>
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="0.3"
+                    android:fontFamily="cursive"
+                    android:gravity="center"
+                    android:text="Friend's Wishlists"
+                    android:textColor="#000000"
+                    android:textSize="40sp" />
 
                 <ScrollView
+                    android:id="@+id/ScrollWishlists"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_weight="1">
+                    android:layout_height="291dp"
+                    android:layout_weight="5">
 
                     <LinearLayout
-                        android:id="@+id/ScrollViewFriendsRequest"
+                        android:id="@+id/ScrollItemsTab"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                    </LinearLayout>
+                        android:orientation="vertical"></LinearLayout>
                 </ScrollView>
-
 
             </LinearLayout>
         </LinearLayout>
@@ -136,7 +135,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical">
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/buttonProfil"
@@ -184,5 +184,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

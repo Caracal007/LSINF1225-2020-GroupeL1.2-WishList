@@ -3,6 +3,7 @@ package be.uclouvain.lsinf1225.groupel12.wishlist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -47,9 +48,23 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
                 layoutParams.setMargins(45, 10, 30, 0);
                 wishlistName.setLayoutParams(layoutParams);
                 wishlistName.setTag(Tab[i]);
+                wishlistName.setBackgroundResource(R.drawable.roundedbutton);
                 tableau.addView(wishlistName);
             }
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        String str=v.getTag().toString();
+        for(int i = 0; i <Tab.length; i++) {
+            if (str.equals(Tab[i])) {
+                StringMemory.initStringMemory(str);
+                Intent intent = new Intent(this, MainContentWishList.class);
+                startActivity(intent);
+            }
+        }
+
     }
 
     /* *************** BUTTON *********************** */
@@ -138,18 +153,6 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
     public void onBackPressed() {
         // do nothing.
     }
-
-    @Override
-    public void onClick(View v) {
-        String str=v.getTag().toString();
-        for(int i = 0; i <Tab.length; i++) {
-            if (str.equals(Tab[i])) {
-                StringMemory.initStringMemory(str);
-                Intent intent = new Intent(this, MainContentWishList.class);
-                startActivity(intent);
-            }
-        }
-
-    }
     /* Button Retour---------------------------------------------------------------- */
+
 }

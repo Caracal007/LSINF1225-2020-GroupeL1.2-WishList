@@ -32,7 +32,7 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -47,8 +47,8 @@
                     android:id="@+id/textNamewishlistTitle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#DADADA"
+                    android:layout_weight="0.9"
+                    android:background="#F8F7F7"
                     android:baselineAligned="false"
                     android:fontFamily="serif"
                     android:gravity="center_horizontal|center_vertical"
@@ -103,7 +103,7 @@
 
                     <ImageView
                         android:id="@+id/imagePrivacyWishlist"
-                        android:layout_width="match_parent"
+                        android:layout_width="125dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
                         app:srcCompat="@drawable/icons8_user_group_2_96" />
@@ -136,7 +136,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:gravity="bottom|center_horizontal|end"
             android:orientation="horizontal">
 

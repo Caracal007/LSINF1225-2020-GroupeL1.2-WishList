@@ -371,13 +371,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
     //FriendNotification------------------------------------------------------------------>>>
 
-    //WishlistFriands--------------------------------------------------------------------->>>
-
-
-
-    //WishlistFriands--------------------------------------------------------------------->>>
-
-
     //ContentWishlist--------------------------------------------------------------------->>>
     public String[] getItems(String username, String namelist){
 
@@ -415,6 +408,30 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         return false;
     }
     //Wishlist--------------------------------------------------------------------->>>
+
+    //WishlistFriendList--------------------------------------------------------------------->>>
+    public String[] getWishlistsFriend(String friendName){
+
+        String take = "select * from wishlists where colUsername='" + friendName + "' and colPrivacy='" + "OFF" + "'" ;
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        int count = cursor.getCount();
+
+        if (count == 0){
+            return null;
+        }
+        String lists[] = new String[count];
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            for (int i = 0; i < count; i++) {
+                lists[i] = cursor.getString(1);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return lists;
+    }
+    //WishlistFriendList--------------------------------------------------------------------->>>
 
 }
 

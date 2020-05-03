@@ -1,11 +1,9 @@
 package be.uclouvain.lsinf1225.groupel12.wishlist;
 
-import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,22 +14,22 @@ import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.StringMemory;
 
-public class MainContentWishList extends AppCompatActivity /*implements View.OnClickListener*/ {
+public class MainContentWishlistFriend extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_content_wishlist);
-        addItemsToTab(Session.getSession(), StringMemory.getStringMemory());
+        setContentView(R.layout.activity_main_content_wishlist_friend);
+        addItemsToTab(StringMemory.getStringMemoryFriendName(), StringMemory.getStringMemory());
 
         bottomButton();
 
-        setPrivacy(Session.getSession(), StringMemory.getStringMemory());
+        setVariables();
 
-        titleWishlist = (TextView)findViewById(R.id.textNamewishlistTitle);
-        titleWishlist.setText(StringMemory.getStringMemory());
+
     }
     private TextView titleWishlist;
+    private TextView titleNameFriend;
     private MySQLiteOpenHelper mySQLiteOpenHelper;
     private String Tab[];
 
@@ -55,18 +53,16 @@ public class MainContentWishList extends AppCompatActivity /*implements View.OnC
             }
         }
     }
-    /* Set Privacy---------------------------------------------------------------- */
-    private void setPrivacy(String username, String whishlistName){
-        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        ImageView Privacy = findViewById(R.id.imagePrivacyWishlist);
-        if(mySQLiteOpenHelper.getPrivacy(username, whishlistName)){
-            Privacy.setImageResource(R.drawable.icons8_cadenas_64);
-        }
-        else {
-            Privacy.setImageResource(R.drawable.icons8_user_group_2_96);
-        }
+
+    /* Set Variables---------------------------------------------------------------- */
+    private void setVariables(){
+        titleNameFriend = (TextView)findViewById(R.id.textNameFriendProfil);
+        titleNameFriend.setText(StringMemory.getStringMemoryFriendName());
+
+        titleWishlist = (TextView)findViewById(R.id.NameFriendWishlist);
+        titleWishlist.setText(StringMemory.getStringMemory());
     }
-    /* Set Privacy---------------------------------------------------------------- */
+    /* Set Variables---------------------------------------------------------------- */
 
     /* *************** BUTTON *********************** */
     /* BOTTOM BUTTON */
@@ -130,4 +126,5 @@ public class MainContentWishList extends AppCompatActivity /*implements View.OnC
         }
 
     }*/
+    /* Button Retour---------------------------------------------------------------- */
 }

@@ -17,7 +17,7 @@
             android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_weight="0.9"
-            android:background="#DADADA"
+            android:background="#FFFFFF"
             android:contentDescription="@string/Add_a_whishlist"
             android:fontFamily="serif"
             android:gravity="center"
@@ -63,25 +63,27 @@
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/switchPrivacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Private"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.1" />
-
-            <CheckBox
-                android:id="@+id/switchPrivacy"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginRight="150dp"
-                android:layout_weight="0.2"
-                android:text="Private"
-                android:textSize="20sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="0.5" />
 
             <Button
                 android:id="@+id/buttonSaveNewList"
@@ -90,7 +92,7 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginVertical="20dp"
-                android:layout_weight="0.3"
+                android:layout_weight="0.5"
                 android:background="@drawable/roundedbutton"
                 android:backgroundTint="#FF9800"
                 android:gravity="center"
@@ -102,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.5" />
 
         </LinearLayout>
 

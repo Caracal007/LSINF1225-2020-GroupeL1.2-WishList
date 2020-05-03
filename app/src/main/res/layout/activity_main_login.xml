@@ -97,7 +97,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:backgroundTint="#DADADA"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center"
                 android:text="@string/inscription"
                 android:textSize="18sp" />
