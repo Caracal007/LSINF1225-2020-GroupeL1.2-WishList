@@ -41,7 +41,6 @@ public class MainLogin extends AppCompatActivity {
                 String pass_word = password.getText().toString();
                 if (mySQLiteOpenHelper.checkConnection(user_name, pass_word)) {
                     mySQLiteOpenHelper.close();
-                    Toast.makeText(this, "Connexion en cours !", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, MainProfil.class);
                     Session.initSession(user_name);
                     startActivity(intent);

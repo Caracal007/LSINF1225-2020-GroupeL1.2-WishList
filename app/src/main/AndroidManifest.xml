@@ -9,10 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainEditGiftDescription"></activity>
-        <activity android:name=".MainItemDescription" />
-        <activity android:name=".MainFriendItemContent" />
-        <activity android:name=".MainContentWishlistFriend" />
+        <activity android:name=".MainContentWishlistFriend"></activity>
         <activity android:name=".MainWishlistFriend" />
         <activity android:name=".MainContentWishList" />
         <activity android:name=".MainFriendNotification" />
