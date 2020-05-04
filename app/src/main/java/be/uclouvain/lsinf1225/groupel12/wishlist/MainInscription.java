@@ -45,6 +45,10 @@ public class MainInscription extends AppCompatActivity {
         btnInscription();
     }
 
+    boolean isEmailValid(CharSequence email) {
+        return !(android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches());
+    }
+
     private void Inscription(){
 
         recup1 = txtUsername.getText().toString();
@@ -56,7 +60,10 @@ public class MainInscription extends AppCompatActivity {
         if (recup1.matches("") || recup2.matches("") || recup3.matches("") || recup4.matches("")
                 || recup5.matches("")) {
 
-            Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please fill all the blanks.", Toast.LENGTH_LONG).show();
+        }
+        else if(isEmailValid(recup5)){
+            Toast.makeText(this, "Email is invalid.", Toast.LENGTH_LONG).show();
         }
 
         else{

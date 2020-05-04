@@ -135,7 +135,7 @@ public class MainAddGift extends AppCompatActivity {
     void checkDataEntered() {
         isValid = true;
         if (isEmpty(name)) {
-            name.setError("name is required");
+            name.setError("Name is required");
             isValid = false;
         }
     }

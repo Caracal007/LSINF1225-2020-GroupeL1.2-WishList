@@ -39,7 +39,7 @@ public class MainAddFriend extends AppCompatActivity {
         if (friendName.length() != 0) {
             if (check) {
                 if (friendName.equals(Session.getSession())) {
-                    friendToAdd.setText("Vous ne pouvez vous rajouter");
+                    friendToAdd.setText("You can't add yourself");
                     friendToAdd.setTypeface(null, Typeface.ITALIC);
                 }
                 else {
@@ -47,7 +47,7 @@ public class MainAddFriend extends AppCompatActivity {
                 }
             }
             else {
-                friendToAdd.setText("Aucune personne trouvée ...");
+                friendToAdd.setText("No person found ...");
                 friendToAdd.setTypeface(null, Typeface.ITALIC);
             }
         }
