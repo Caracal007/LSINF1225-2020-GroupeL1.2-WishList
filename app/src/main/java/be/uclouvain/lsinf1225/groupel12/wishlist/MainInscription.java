@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -29,21 +30,21 @@ public class MainInscription extends AppCompatActivity {
 
 
     //Inscription ------------------------------------------------------------------>>>
-    private TextInputEditText txtUsername;
-    private TextInputEditText txtPassword;
-    private TextInputEditText txtFirst_name;
-    private TextInputEditText txtLast_name;
-    private TextInputEditText txtEmail;
+    private EditText txtUsername;
+    private EditText txtPassword;
+    private EditText txtFirst_name;
+    private EditText txtLast_name;
+    private EditText txtEmail;
     private String recup1, recup2, recup3, recup4, recup5;
     private boolean isValid;
 
 
     private void initInscription(){
-        txtUsername = (TextInputEditText) findViewById(R.id.username);
-        txtPassword = (TextInputEditText) findViewById(R.id.password);
-        txtFirst_name = (TextInputEditText) findViewById(R.id.txtFirst_name);
-        txtLast_name = (TextInputEditText) findViewById(R.id.txtLast_name);
-        txtEmail = (TextInputEditText) findViewById(R.id.txtEmail);
+        txtUsername = findViewById(R.id.username);
+        txtPassword =  findViewById(R.id.password);
+        txtFirst_name = findViewById(R.id.txtFirst_name);
+        txtLast_name = findViewById(R.id.txtLast_name);
+        txtEmail = findViewById(R.id.txtEmail);
         btnInscription();
     }
 
@@ -59,7 +60,7 @@ public class MainInscription extends AppCompatActivity {
         recup4 = txtLast_name.getText().toString();
         recup5 = txtEmail.getText().toString();
 
-        
+
         checkDataEntered();
         if(isEmailValid(recup5)){
             Toast.makeText(this, "Email is invalid.", Toast.LENGTH_LONG).show();
@@ -115,7 +116,7 @@ public class MainInscription extends AppCompatActivity {
         }
     }
 
-    private boolean isEmpty(TextInputEditText text) {
+    private boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();
         return TextUtils.isEmpty(str);
     }
