@@ -25,8 +25,6 @@ public class MainInscription extends AppCompatActivity {
 
         initInscription();
     }
-    private MySQLiteOpenHelper mySQLiteOpenHelper;
-
 
 
     //Inscription ------------------------------------------------------------------>>>
@@ -35,7 +33,6 @@ public class MainInscription extends AppCompatActivity {
     private EditText txtFirst_name;
     private EditText txtLast_name;
     private EditText txtEmail;
-    private String recup1, recup2, recup3, recup4, recup5;
     private boolean isValid;
 
 
@@ -54,11 +51,11 @@ public class MainInscription extends AppCompatActivity {
 
     private void Inscription(){
 
-        recup1 = txtUsername.getText().toString();
-        recup2 = txtPassword.getText().toString();
-        recup3 = txtFirst_name.getText().toString();
-        recup4 = txtLast_name.getText().toString();
-        recup5 = txtEmail.getText().toString();
+        String recup1 = txtUsername.getText().toString();
+        String recup2 = txtPassword.getText().toString();
+        String recup3 = txtFirst_name.getText().toString();
+        String recup4 = txtLast_name.getText().toString();
+        String recup5 = txtEmail.getText().toString();
 
 
         checkDataEntered();
@@ -68,7 +65,7 @@ public class MainInscription extends AppCompatActivity {
         }
         if(isValid){
 
-            mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+            MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
             String alreadyExist = mySQLiteOpenHelper.insertInscription(recup1, recup2, recup3, recup4, recup5);
             if(alreadyExist != null){
                 Toast.makeText(this, alreadyExist, Toast.LENGTH_LONG).show();
