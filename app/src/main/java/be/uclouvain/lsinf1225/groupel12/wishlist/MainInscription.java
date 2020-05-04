@@ -59,16 +59,7 @@ public class MainInscription extends AppCompatActivity {
         recup4 = txtLast_name.getText().toString();
         recup5 = txtEmail.getText().toString();
 
-        /*if (recup1.matches("") || recup2.matches("") || recup3.matches("") || recup4.matches("")
-                || recup5.matches("")) {
-
-            Toast.makeText(this, "Please fill all the blanks.", Toast.LENGTH_LONG).show();
-        }
-        else if(isEmailValid(recup5)){
-            Toast.makeText(this, "Email is invalid.", Toast.LENGTH_LONG).show();
-        }
-
-         */
+        
         checkDataEntered();
         if(isEmailValid(recup5)){
             Toast.makeText(this, "Email is invalid.", Toast.LENGTH_LONG).show();
