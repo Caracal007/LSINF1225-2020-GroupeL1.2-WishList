@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class MainInscription extends AppCompatActivity {
     private TextInputEditText txtLast_name;
     private TextInputEditText txtEmail;
     private String recup1, recup2, recup3, recup4, recup5;
+    private boolean isValid;
 
 
     private void initInscription(){
@@ -57,7 +59,7 @@ public class MainInscription extends AppCompatActivity {
         recup4 = txtLast_name.getText().toString();
         recup5 = txtEmail.getText().toString();
 
-        if (recup1.matches("") || recup2.matches("") || recup3.matches("") || recup4.matches("")
+        /*if (recup1.matches("") || recup2.matches("") || recup3.matches("") || recup4.matches("")
                 || recup5.matches("")) {
 
             Toast.makeText(this, "Please fill all the blanks.", Toast.LENGTH_LONG).show();
@@ -66,7 +68,13 @@ public class MainInscription extends AppCompatActivity {
             Toast.makeText(this, "Email is invalid.", Toast.LENGTH_LONG).show();
         }
 
-        else{
+         */
+        checkDataEntered();
+        if(isEmailValid(recup5)){
+            Toast.makeText(this, "Email is invalid.", Toast.LENGTH_LONG).show();
+            isValid = false;
+        }
+        if(isValid){
 
             mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
             String alreadyExist = mySQLiteOpenHelper.insertInscription(recup1, recup2, recup3, recup4, recup5);
@@ -88,6 +96,39 @@ public class MainInscription extends AppCompatActivity {
             }
         });
     }
+
+    private void checkDataEntered() {
+        isValid = true;
+        if (isEmpty(txtFirst_name)) {
+            txtFirst_name.setError("First name is required");
+            isValid = false;
+        }
+
+        if (isEmpty(txtLast_name)) {
+            txtLast_name.setError("Last name is required");
+            isValid = false;
+        }
+
+        if (isEmpty(txtEmail)) {
+            txtEmail.setError("Email is required");
+            isValid = false;
+        }
+
+        if (isEmpty(txtUsername)) {
+            txtUsername.setError("Username is required");
+            isValid = false;
+        }
+        if (isEmpty(txtPassword)) {
+            txtPassword.setError("Password is required");
+            isValid = false;
+        }
+    }
+
+    private boolean isEmpty(TextInputEditText text) {
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
+
 
     public void openActivity2(){
         Intent intent = new Intent(this, MainPreferences.class);
