@@ -16,7 +16,7 @@ import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.StringMemory;
 
-public class MainContentWishList extends AppCompatActivity /*implements View.OnClickListener*/ {
+public class MainContentWishList extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +37,13 @@ public class MainContentWishList extends AppCompatActivity /*implements View.OnC
 
     private void addItemsToTab(String username, String wishlist) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String Tab[] = mySQLiteOpenHelper.getItems(username, wishlist);
+        Tab = mySQLiteOpenHelper.getItems(username, wishlist);
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollItemsTab);
                 Button giftName = new Button(this);
                 giftName.setText(Tab[i]);
-                /*wishlistName.setOnClickListener(this);*/
+                giftName.setOnClickListener(this);
                 giftName.setTextSize(20);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -118,16 +118,16 @@ public class MainContentWishList extends AppCompatActivity /*implements View.OnC
     /* BOTTOM BUTTON */
     /* *************** BUTTON *********************** */
 
-    /*@Override
+    @Override
     public void onClick(View v) {
         String str = v.getTag().toString();
         for (int i = 0; i <Tab.length; i++){
             if (str.equals(Tab[i])){
-                StringMemory.initStringMemory(str);
-                Intent intent = new Intent(this, MainContentWishList.class);
+                StringMemory.initStringMemoryGiftName(str);
+                Intent intent = new Intent(this, MainItemDescription.class);
                 startActivity(intent);
             }
         }
 
-    }*/
+    }
 }

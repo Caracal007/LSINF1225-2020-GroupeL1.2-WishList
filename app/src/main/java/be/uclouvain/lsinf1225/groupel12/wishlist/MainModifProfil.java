@@ -80,10 +80,6 @@ public class MainModifProfil extends AppCompatActivity {
             }
         })
         ;}
-    public void openActivityProfil(){
-        Intent intent = new Intent(this, MainProfil.class);
-        startActivity(intent);
-    }
     /* Button terminer---------------------------------------------------------------- */
 
     /* Button modif ---------------------------------------------------------------- */
@@ -126,6 +122,10 @@ public class MainModifProfil extends AppCompatActivity {
             }
         })
         ;}
+    public void openActivityProfil(){
+        Intent intent = new Intent(this, MainProfil.class);
+        startActivity(intent);
+    }
     /* Button Profil---------------------------------------------------------------- */
     /* Button Friend---------------------------------------------------------------- */
     private void buttonFriend() {

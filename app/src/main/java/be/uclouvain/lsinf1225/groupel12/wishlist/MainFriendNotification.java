@@ -67,6 +67,7 @@ public class MainFriendNotification extends AppCompatActivity implements View.On
                 layoutParams2.setMargins(45, 10, 10, 0);
                 layoutParams2.weight = 0.2f;
                 layoutParams2.gravity= Gravity.RIGHT;
+
                 LinearLayout.LayoutParams layoutParams4 = new LinearLayout.LayoutParams(
                         0, LinearLayout.LayoutParams.WRAP_CONTENT);
                 layoutParams4.setMargins(10, 10, 30, 0);
@@ -75,6 +76,7 @@ public class MainFriendNotification extends AppCompatActivity implements View.On
 
                 add.setLayoutParams(layoutParams2);
                 delete.setLayoutParams(layoutParams4);
+
                 LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 

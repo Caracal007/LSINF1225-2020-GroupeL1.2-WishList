@@ -433,6 +433,40 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
     //WishlistFriendList--------------------------------------------------------------------->>>
 
+    //ItemDescription--------------------------------------------------------------------->>>
+    public String[] getItemDescription(String username, String nameList, String nameItem){
+        String take = "select * from items where username='" + username + "' and wishlist ='" + nameList + "' and name ='" + nameItem + "'";
+        Cursor cursor = this.getReadableDatabase().rawQuery(take, null);
+        int count = cursor.getCount();
+
+        if (count == 0){
+            return null;
+        }
+        String lists[] = new String[3];
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            lists[0] = cursor.getString(4);
+            lists[1] = cursor.getString(3);
+            lists[2] = cursor.getString(2);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return lists;
+    }
+    //ItemDescription--------------------------------------------------------------------->>>
+
+    //EditItemDescription--------------------------------------------------------------------->>>
+    public void updateItemDescription(String nameItemEdited, String urlItem, String priceItem, String descriptionItem, String username, String nameList, String nameItem){
+        nameItemEdited = nameItemEdited.replace("'", "''");
+        urlItem = urlItem.replace("'", "''");
+        priceItem = priceItem.replace("'", "''");
+        descriptionItem = descriptionItem.replace("'", "''");
+
+        String modif = "update items set name = '"+nameItemEdited+"',  url = '"+urlItem+"', price = '"+priceItem+"', description = '"+descriptionItem+"' where username='" + username + "' and wishlist ='" + nameList + "' and name ='" + nameItem + "'";
+        this.getWritableDatabase().execSQL(modif);
+    }
+    //EditItemDescription--------------------------------------------------------------------->>>
 }
 
 

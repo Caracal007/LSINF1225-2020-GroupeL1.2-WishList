@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
             for (int i = 0; i < Tab.length; i++) {
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollWishlistsTab);
                 Button wishlistName = new Button(this);
+
                 wishlistName.setText(Tab[i]);
                 wishlistName.setTag(Tab[i]);
                 wishlistName.setId(i);
@@ -46,8 +48,10 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 layoutParams.setMargins(45, 10, 30, 0);
+
                 wishlistName.setLayoutParams(layoutParams);
                 wishlistName.setTag(Tab[i]);
+                wishlistName.setId(0);
                 wishlistName.setBackgroundResource(R.drawable.roundedbutton);
                 tableau.addView(wishlistName);
             }
@@ -56,15 +60,19 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        String str=v.getTag().toString();
-        for(int i = 0; i <Tab.length; i++) {
-            if (str.equals(Tab[i])) {
-                StringMemory.initStringMemory(str);
-                Intent intent = new Intent(this, MainContentWishList.class);
-                startActivity(intent);
-            }
-        }
+        String str = v.getTag().toString();
+        int id = v.getId();
+        for (int i = 0; i < Tab.length; i++) {
+                if (str.equals(Tab[i])) {
+                    if (id == 0) {
+                        StringMemory.initStringMemory(str);
+                        Intent intent = new Intent(this, MainContentWishList.class);
+                        startActivity(intent);
+                    } else {
 
+                    }
+                }
+        }
     }
 
     /* *************** BUTTON *********************** */
