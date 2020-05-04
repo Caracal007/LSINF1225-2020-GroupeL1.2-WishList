@@ -55,6 +55,7 @@ public class MainModifProfil extends AppCompatActivity {
         logout();
         down();
         modif();
+        bottomButton();
     }
     /* Button All ---------------------------------------------------------------- */
     /* Button logout ---------------------------------------------------------------- */

@@ -21,6 +21,7 @@ public class MainWishlistFriend extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_main_wishlist_friend);
 
         bottomButton();
+        buttonFriendPreferences();
 
         setTitle(StringMemory.getStringMemoryFriendName());
 
@@ -70,7 +71,21 @@ public class MainWishlistFriend extends AppCompatActivity implements View.OnClic
         friendNameTitle.setText(friendName);
     }
 
+
     /* *************** BUTTON *********************** */
+    /* Button friendPref---------------------------------------------------------------- */
+    private void buttonFriendPreferences() {
+        findViewById(R.id.friendPreferences).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                openActivityFriendPreferences();
+            }
+        })
+        ;}
+    public void openActivityFriendPreferences(){
+        Intent intent = new Intent(this, MainFriendPreferences.class);
+        startActivity(intent);
+    }
+    /* Button friendPref---------------------------------------------------------------- */
     private void bottomButton(){
         buttonAddGift();
         buttonProfil();

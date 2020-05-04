@@ -45,7 +45,7 @@
                 android:background="#00FFFFFF"
                 android:baselineAligned="false"
                 android:contentDescription="@string/ModifProfile"
-                app:srcCompat="@drawable/icons8_engrenage_64" />
+                app:srcCompat="@drawable/icons8_info_64" />
 
         </LinearLayout>
 

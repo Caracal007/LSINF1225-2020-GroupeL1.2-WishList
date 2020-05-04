@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainContentWishlistFriend"></activity>
+        <activity android:name=".MainFriendPreferences" />
         <activity android:name=".MainWishlistFriend" />
         <activity android:name=".MainContentWishList" />
         <activity android:name=".MainFriendNotification" />
@@ -28,7 +29,8 @@
         <activity android:name=".MainModifProfil" />
         <activity android:name=".MainAddGift" />
         <activity android:name=".MainAddWishlist" />
-        <activity android:name=".MainContentWishlist" />
+        <activity android:name=".MainItemDescription"  />
+        <activity android:name=".MainEditGiftDescription"/>
     </application>
 
 </manifest>

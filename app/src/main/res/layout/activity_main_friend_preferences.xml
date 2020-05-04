@@ -20,6 +20,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/friendPreferenceTitle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.9"
@@ -44,6 +45,11 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -57,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="@string/PrefC"
+                        android:text="Color"
                         android:textColor="#FFFFFF"
                         android:textSize="24sp" />
 
@@ -67,8 +73,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/roundedbutton"
-                        android:text="TextView"
-                        android:textColor="#000000" />
+                        android:backgroundTint="#00FFFFFF"
+                        android:text="unknown"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
@@ -94,8 +102,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/roundedbutton"
-                        android:text="TextView"
-                        android:textColor="#000000" />
+                        android:backgroundTint="#00FFFFFF"
+                        android:text="unknown"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/friendChaussures"
@@ -103,8 +113,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/roundedbutton"
-                        android:text="TextView"
-                        android:textColor="#000000" />
+                        android:backgroundTint="#00FFFFFF"
+                        android:text="unknown"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
 
 
                 </LinearLayout>
@@ -130,28 +142,45 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/roundedbutton"
-                        android:text="TextView"
-                        android:textColor="#000000" />
+                        android:backgroundTint="#00FFFFFF"
+                        android:text="unknown"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/friendAdresse"
+                    android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:layout_weight="0.2"
+                    android:text="Adress:"
                     android:textColor="#FFFFFF"
-                    android:textColorHint="#FFFFFF"
                     android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/friendAdresse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="unknown"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
