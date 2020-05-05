@@ -1,8 +1,11 @@
 package be.uclouvain.lsinf1225.groupel12.wishlist;
 
 import androidx.annotation.DrawableRes;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +47,14 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
                 Button giftName = new Button(this);
                 giftName.setText(Tab[i]);
                 giftName.setOnClickListener(this);
+                giftName.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        String giftName = (String) v.getTag();
+                        openDialog(giftName);
+                        return false;
+                    }
+                });
                 giftName.setTextSize(20);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -67,6 +78,38 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
         }
     }
     /* Set Privacy---------------------------------------------------------------- */
+
+    /* Delete Pop---------------------------------------------------------------- */
+    @SuppressLint("ResourceAsColor")
+    private void openDialog(String giftName){
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("DELETE MESSAGE")
+                .setMessage("Are you sur you want to delete "+ giftName +" of your gift's list ?")
+                .setIcon(R.drawable.icons8_poubelle_30)
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        updateWishlist(Session.getSession(), giftName, StringMemory.getStringMemory());
+                        openActivityWishlistitems();
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(R.color.red);
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(R.color.red);
+    }
+
+    private void updateWishlist(String username, String giftName, String wishlistName){
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        mySQLiteOpenHelper.deleteItemFromeWishlist(username, wishlistName, giftName);
+    }
+    /* Delete Pop---------------------------------------------------------------- */
+
+    public void openActivityWishlistitems(){
+        Intent intent = new Intent(this, MainContentWishList.class);
+        startActivity(intent);
+    }
 
     /* *************** BUTTON *********************** */
     /* BOTTOM BUTTON */

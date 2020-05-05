@@ -1,7 +1,10 @@
 package be.uclouvain.lsinf1225.groupel12.wishlist;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +39,14 @@ public class MainFriend extends AppCompatActivity implements  View.OnClickListen
                 friendName.setTag(Tab[i]);
                 friendName.setId(i);
                 friendName.setOnClickListener(this);
+                friendName.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        String friendName = (String) v.getTag();
+                        openDialog(friendName);
+                        return false;
+                    }
+                });
                 friendName.setTextSize(20);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -60,6 +71,33 @@ public class MainFriend extends AppCompatActivity implements  View.OnClickListen
         }
 
     }
+
+    /* Delete Pop---------------------------------------------------------------- */
+    @SuppressLint("ResourceAsColor")
+    private void openDialog(String friendName ){
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("DELETE MESSAGE")
+                .setMessage("Are you sur you want to delete "+ friendName + " of your friend's list ?" )
+                .setIcon(R.drawable.icons8_poubelle_30)
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        updateFriends(Session.getSession(), friendName );
+                        openActivityFriend();
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(R.color.red);
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(R.color.red);
+    }
+
+    private void updateFriends(String username, String friendName){
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        mySQLiteOpenHelper.deleteFriend(username, friendName );
+    }
+    /* Delete Pop---------------------------------------------------------------- */
 
     private void allButton(){
         bottomButton();

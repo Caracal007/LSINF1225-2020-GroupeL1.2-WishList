@@ -307,6 +307,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         return lists;
     }
 
+    public void deleteFriend(String username, String friendName){
+        String deleteFriend = "delete from friends where (colSender='" + username + "' and colReceptionist ='" + friendName + "') or (colReceptionist='" + username + "' and colSender ='" + friendName + "')";
+        this.getWritableDatabase().execSQL(deleteFriend);
+    }
+
     //Friend ------------------------------------------------------------------>>>
 
     //Add Friend ------------------------------------------------------------------>>>
@@ -407,6 +412,18 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+
+    public void deleteWishlists(String username, String wishlistName){
+        String deleteWishlist = "delete from wishlists where colUsername='" + username + "' and colWishlistName ='" + wishlistName + "'";
+        this.getWritableDatabase().execSQL(deleteWishlist);
+        try {
+            String deleteItems = "delete from items where username='" + username + "' and wishlistName ='" + wishlistName + "'";
+            this.getWritableDatabase().execSQL(deleteItems);
+        }
+        catch (Exception e){
+
+        }
+    }
     //Wishlist--------------------------------------------------------------------->>>
 
     //WishlistFriendList--------------------------------------------------------------------->>>
@@ -455,6 +472,12 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         return lists;
     }
     //ItemDescription--------------------------------------------------------------------->>>
+    //DeleteItem--------------------------------------------------------------------->>>
+    public void deleteItemFromeWishlist(String username, String wishlistName, String itemName){
+        String deleteItem = "delete from items where username='" + username + "' and wishlist ='" + wishlistName + "' and name = '" + itemName + "'";
+        this.getWritableDatabase().execSQL(deleteItem);
+    }
+    //DeleteItem--------------------------------------------------------------------->>>
 
     //EditItemDescription--------------------------------------------------------------------->>>
     public void updateItemDescription(String nameItemEdited, String urlItem, String priceItem, String descriptionItem, String username, String nameList, String nameItem){
