@@ -90,8 +90,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
+                        android:autoLink="web"
+                        android:gravity="center"
                         android:text="TextView"
-                        android:textColor="#FF9800"
+                        android:textColor="#FFFFFF"
                         android:textSize="24sp"
                         tools:text="@string/URL" />
                 </LinearLayout>
@@ -117,8 +119,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
+                        android:gravity="center"
                         android:text="TextView"
-                        android:textColor="#FF9800"
+                        android:textColor="#FFFFFF"
                         android:textSize="24sp"
                         tools:text="Price" />
                 </LinearLayout>
@@ -126,14 +129,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
+                    android:layout_weight="2"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:text="Description:"
                         android:textSize="24sp"
                         tools:text="Description:" />
@@ -142,10 +145,12 @@
                         android:id="@+id/descriptionItem"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
+                        android:gravity="center"
                         android:text="TextView"
-                        android:textColor="#FF9800"
+                        android:textColor="#FFFFFF"
                         android:textSize="24sp"
                         tools:text="Description" />
                 </LinearLayout>
