@@ -1,5 +1,7 @@
 package be.uclouvain.lsinf1225.groupel12.wishlist;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -50,6 +53,24 @@ public class MainModifProfil extends AppCompatActivity {
     }
 
 
+    @SuppressLint("ResourceAsColor")
+    private void openDialog(){
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("LOGOUT MESSAGE")
+                .setMessage("Are you sure to want to logout ?")
+                .setIcon(R.drawable.power_)
+                .setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        openActivityLogin();
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(R.color.red);
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(R.color.red);
+    }
     /* Button All ---------------------------------------------------------------- */
     private void buttonAll(){
         logout();
@@ -61,8 +82,9 @@ public class MainModifProfil extends AppCompatActivity {
     /* Button logout ---------------------------------------------------------------- */
     private void logout() {
         findViewById(R.id.buttonLogout).setOnClickListener(new Button.OnClickListener(){
+
             public void onClick(View v) {
-                openActivityLogin();
+                openDialog();
             }
         })
         ;}

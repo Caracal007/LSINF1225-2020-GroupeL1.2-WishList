@@ -51,8 +51,10 @@ public class MainFriendNotification extends AppCompatActivity implements View.On
 
                 ImageButton add = new ImageButton(this);
                 add.setImageResource(R.drawable.icons8_coche_100__1_);
+                add.setBackgroundResource(R.drawable.roundedbutton);
                 ImageButton delete = new ImageButton(this);
                 delete.setImageResource(R.drawable.icons8_effacer_100);
+                delete.setBackgroundResource(R.drawable.roundedbutton);
 
                 add.setTag(Tab[i]);
                 add.setId(0);
