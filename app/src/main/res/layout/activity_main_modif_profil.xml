@@ -35,7 +35,7 @@
                 android:gravity="center"
                 android:text="@string/ModifProfile"
                 android:textColor="#000000"
-                android:textSize="34sp" />
+                android:textSize="30sp" />
 
             <ImageButton
                 android:id="@+id/buttonLogout"
