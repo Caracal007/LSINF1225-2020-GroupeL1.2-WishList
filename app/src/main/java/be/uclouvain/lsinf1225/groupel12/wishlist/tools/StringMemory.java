@@ -12,7 +12,7 @@ public class StringMemory {
         stringmemoryFriendName = username;
     }
     static public void initStringMemoryGiftName(String username){
-        stringmemoryFriendName = username;
+        stringmemoryGiftName = username;
     }
     static public String getStringMemory(){
         return stringmemory;
@@ -21,6 +21,6 @@ public class StringMemory {
         return stringmemoryFriendName;
     }
     static public String getStringMemoryGiftName(){
-        return stringmemoryFriendName;
+        return stringmemoryGiftName;
     }
 }

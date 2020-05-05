@@ -212,8 +212,19 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
 
     //Add Wishlist -------------------------------------------------------------->>>
+    public String checkWishlistAlreadyExist(String username, String nameList, String privacy) {
+        String check = "select colUsername from wishlists where colUsername='"+username+"' and colWishlistName='"+nameList+"'";
+        Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
+        int count = cursor.getCount();
+        cursor.close();
 
-    public String insertAddWishlist(String username, String nameList, String privacy){
+        if(count != 0){
+            return "You already have a list called " + nameList;
+        }
+        return null;
+    }
+
+    public void insertAddWishlist(String username, String nameList, String privacy){
 
         String check = "select colUsername from wishlists where colUsername='"+username+"' and colWishlistName='"+nameList+"'";
         Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
@@ -226,11 +237,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             String creation = "insert into wishlists (colUsername, colWishlistName, colPrivacy) values ('"
                     + username + "','" + nameList + "','" + privacy + "')";
             this.getWritableDatabase().execSQL(creation);
-
-            return null;
-        }
-        else {
-            return ("You already have a list called " + nameList);
         }
     }
     //Add Wishlist -------------------------------------------------------------->>>
@@ -422,7 +428,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         String deleteWishlist = "delete from wishlists where colUsername='" + username + "' and colWishlistName ='" + wishlistName + "'";
         this.getWritableDatabase().execSQL(deleteWishlist);
         try {
-            String deleteItems = "delete from items where username='" + username + "' and wishlistName ='" + wishlistName + "'";
+            String deleteItems = "delete from items where username='" + username + "' and wishlist ='" + wishlistName + "'";
             this.getWritableDatabase().execSQL(deleteItems);
         }
         catch (Exception e){

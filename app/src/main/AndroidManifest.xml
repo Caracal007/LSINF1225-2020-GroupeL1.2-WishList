@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_thewisherlogocopie_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainContentWishlistFriend"></activity>
+        <activity android:name=".MainDescriptionItemFriend"></activity>
+        <activity android:name=".MainContentWishlistFriend" />
         <activity android:name=".MainFriendPreferences" />
         <activity android:name=".MainWishlistFriend" />
         <activity android:name=".MainContentWishList" />
@@ -29,8 +30,8 @@
         <activity android:name=".MainModifProfil" />
         <activity android:name=".MainAddGift" />
         <activity android:name=".MainAddWishlist" />
-        <activity android:name=".MainItemDescription"  />
-        <activity android:name=".MainEditGiftDescription"/>
+        <activity android:name=".MainItemDescription" />
+        <activity android:name=".MainEditGiftDescription" />
     </application>
 
 </manifest>

@@ -35,7 +35,7 @@ public class MainAddWishlist extends AppCompatActivity{
     private String recup1, session, recup2;
 
     private void initAddWishlist(){
-        txtList_name = (TextInputEditText) findViewById(R.id.txtList_name);
+        txtList_name = findViewById(R.id.txtList_name);
         buttonSaveNewList();
         bottomButton();
     }
@@ -47,9 +47,12 @@ public class MainAddWishlist extends AppCompatActivity{
         session = Session.getSession();
 
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String alreadyExists = mySQLiteOpenHelper.insertAddWishlist(session, recup1, recup2);
+        String alreadyExists = mySQLiteOpenHelper.checkWishlistAlreadyExist(session, recup1, recup2);
         if(alreadyExists != null){
             Toast.makeText(this, alreadyExists, Toast.LENGTH_LONG).show();
+        }
+        else if(recup1.matches("")){
+            Toast.makeText(this, "Poor wishlist, she deserves a name !", Toast.LENGTH_LONG).show();
         }
         else{
             mySQLiteOpenHelper.insertAddWishlist(session, recup1, recup2);
@@ -68,10 +71,8 @@ public class MainAddWishlist extends AppCompatActivity{
                 public void onClick(View v) {
                     if (switchPrivacy.isChecked()) {
                         AddWishList("ON");
-                        openActivityProfil();
                     } else {
                         AddWishList("OFF");
-                        openActivityProfil();
                     }
                 }
             }

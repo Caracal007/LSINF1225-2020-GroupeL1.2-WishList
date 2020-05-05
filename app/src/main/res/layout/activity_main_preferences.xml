@@ -142,6 +142,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="2"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -154,6 +156,7 @@
                     android:hint="@string/PrefAd"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
+                    android:maxLength="90"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#FFFFFF"
                     android:textSize="24sp" />

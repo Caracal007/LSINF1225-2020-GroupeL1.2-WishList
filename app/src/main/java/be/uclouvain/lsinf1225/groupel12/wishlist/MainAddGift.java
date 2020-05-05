@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
+import be.uclouvain.lsinf1225.groupel12.wishlist.tools.StringMemory;
 
 public class MainAddGift extends AppCompatActivity {
 
@@ -49,6 +51,8 @@ public class MainAddGift extends AppCompatActivity {
         bottomButton();
         setWishTab(Session.getSession());
 
+        setScroll();
+
         add.setOnClickListener(v -> {
             checkDataEntered();
             if (isValid) {
@@ -67,10 +71,20 @@ public class MainAddGift extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else{
-                    Toast.makeText(this, "You need to create a wishlist to add a gift !", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "You need to create a wishlist first to add a gift !", Toast.LENGTH_LONG).show();
+                    openActivityAddWishlist();
                 }
             }
         });
+    }
+    public void setScroll(){
+        if (WishTab != null) {
+            for (int i = 0; i < WishTab.length; i++) {
+                if (WishTab[i].equals(StringMemory.getStringMemory())) {
+                    spinnerChooseWishlist.setSelection(i);
+                }
+            }
+        }
     }
     public void setWishTab(String username){
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
@@ -132,6 +146,10 @@ public class MainAddGift extends AppCompatActivity {
     }
     /* Button Friend---------------------------------------------------------------- */
     /* BOTTOM BUTTON */
+    public void openActivityAddWishlist(){
+        Intent intent = new Intent(this, MainAddWishlist.class);
+        startActivity(intent);
+    }
 
     boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();
