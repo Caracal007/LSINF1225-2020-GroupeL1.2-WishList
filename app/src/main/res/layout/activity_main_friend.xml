@@ -46,7 +46,7 @@
                     android:fontFamily="serif"
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="12sp"
-                    android:text="Amis"
+                    android:text="@string/Friends"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"

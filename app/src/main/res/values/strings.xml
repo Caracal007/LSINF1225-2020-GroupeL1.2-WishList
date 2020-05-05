@@ -12,7 +12,7 @@
     <string name="Bouton_Add_Friend">"BoutonAddFriend"</string>
     <string name="output">output_search</string>
     <string name="output_search">output_search</string>
-    <string name="Ajouter_un_cadeau">"Add a whish"</string>
+    <string name="Ajouter_un_cadeau">"Add a wish"</string>
     <string name="Nom_du_cadeau">"Name"</string>
     <string name="Description">"Description"</string>
     <string name="Prix">"Price"</string>
@@ -52,6 +52,12 @@
     <string name="ProfileV">"  Variable  "</string>
     <string name="ProfileP">"  Profile  "</string>
     <string name="ProfileW">"  Your wishlists   "</string>
+    <string name="add_friend">Add Friend</string>
+    <string name="search">Search ...</string>
+    <string name="content">Content:</string>
+    <string name="friend_requests">friend requests</string>
+    <string name="requests">Requests:</string>
+    <string name="username">Username</string>
 
 
     <string-array name="Color">

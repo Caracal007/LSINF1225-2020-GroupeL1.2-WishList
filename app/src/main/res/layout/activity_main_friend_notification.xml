@@ -40,7 +40,7 @@
                     android:fontFamily="serif"
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="12sp"
-                    android:text="Demandes d'amis"
+                    android:text="@string/friend_requests"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -89,8 +89,7 @@
                         android:layout_marginVertical="10dp"
                         android:fontFamily="cursive"
                         android:gravity="center"
-                        android:text="Demandes:"
-                        android:textAlignment="textStart"
+                        android:text="@string/requests"
                         android:textColor="#000000"
                         android:textSize="40sp" />
 

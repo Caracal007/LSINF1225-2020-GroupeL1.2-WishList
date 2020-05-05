@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:hint="@string/InscriptionPs"
+                    android:hint="@string/username"
                     android:singleLine="true"
                     android:textColor="#FFFFFFFF"
                     android:textSize="24sp" />
