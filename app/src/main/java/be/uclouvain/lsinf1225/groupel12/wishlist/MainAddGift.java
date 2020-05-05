@@ -31,6 +31,7 @@ public class MainAddGift extends AppCompatActivity {
     private Spinner spinnerChooseWishlist;
     boolean isValid;
     private MySQLiteOpenHelper mySQLiteOpenHelper;
+    private String WishTab[];
 
 
     @Override
@@ -51,24 +52,29 @@ public class MainAddGift extends AppCompatActivity {
         add.setOnClickListener(v -> {
             checkDataEntered();
             if (isValid) {
-                mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-                String name_txt = name.getText().toString();
-                String description_txt = description.getText().toString();
-                String price_txt = price.getText().toString();
-                String url_txt = url.getText().toString();
-                String wishlist_txt = spinnerChooseWishlist.getSelectedItem().toString();
-                mySQLiteOpenHelper.addItem(name_txt, description_txt, price_txt, url_txt, wishlist_txt, Session.getSession());
-                mySQLiteOpenHelper.close();
-                Toast.makeText(this, "Gift added", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, MainContentWishList.class);
+                if(WishTab != null) {
+                    mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+                    String name_txt = name.getText().toString();
+                    String description_txt = description.getText().toString();
+                    String price_txt = price.getText().toString();
+                    String url_txt = url.getText().toString();
+                    String wishlist_txt = spinnerChooseWishlist.getSelectedItem().toString();
+                    mySQLiteOpenHelper.addItem(name_txt, description_txt, price_txt, url_txt, wishlist_txt, Session.getSession());
+                    mySQLiteOpenHelper.close();
+                    Toast.makeText(this, "Gift added", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, MainContentWishList.class);
 
-                startActivity(intent);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(this, "You need to create a wishlist to add a gift !", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
     public void setWishTab(String username){
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String WishTab[] = mySQLiteOpenHelper.getLists(username);
+        WishTab = mySQLiteOpenHelper.getLists(username);
         ArrayList<String> wishList = new ArrayList<>();
         if (WishTab != null) {
             for (int i = 0; i <WishTab.length; i++) {

@@ -91,6 +91,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:hint="Rechercher un ami ..."
+                        android:singleLine="true"
                         android:textColor="#0E0E0E"
                         android:textSize="20sp" />
                 </com.google.android.material.textfield.TextInputLayout>

@@ -41,10 +41,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
+                android:maxLines="1"
                 android:layout_weight="0.5"
                 android:gravity="center"
                 android:textColorHint="#FFFFFFFF">
@@ -52,12 +53,13 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtList_name"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:gravity="center"
                     android:hint="Name the new wishlist"
+                    android:singleLine="true"
                     android:textColor="#FFFFFFFF"
                     android:textColorHint="#FFFFFFFF"
                     android:textSize="24sp" />

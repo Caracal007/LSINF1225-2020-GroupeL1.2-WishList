@@ -238,13 +238,18 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     //Add Gift ------------------------------------------------------------------>>>
 
     public void addItem(String name, String description, String price, String url, String wishlist, String username) {
-        name = name.replace("'", "''");
-        description = description.replace("'", "''");
-        price = price.replace("'", "''");
-        url = url.replace("'", "''");
-        String creation = "insert into items (name, wishlist, description, price, url, username) values ('"
-                + name + "','" + wishlist + "','" + description + "', '" + price + "','" + url + "','" + username + "')";
-        this.getWritableDatabase().execSQL(creation);
+        try {
+            name = name.replace("'", "''");
+            description = description.replace("'", "''");
+            price = price.replace("'", "''");
+            url = url.replace("'", "''");
+            String creation = "insert into items (name, wishlist, description, price, url, username) values ('"
+                    + name + "','" + wishlist + "','" + description + "', '" + price + "','" + url + "','" + username + "')";
+            this.getWritableDatabase().execSQL(creation);
+        }
+        catch(Exception e){
+
+        }
     }
 
     //Add Gift ------------------------------------------------------------------>>>

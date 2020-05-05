@@ -76,6 +76,7 @@
                             android:id="@+id/itemName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:maxLines="1"
                             android:hint="hint"
                             tools:text="itemName" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -137,6 +138,7 @@
                             android:id="@+id/priceItem"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:maxLines="1"
                             tools:text="priceItem" />
                     </com.google.android.material.textfield.TextInputLayout>
 

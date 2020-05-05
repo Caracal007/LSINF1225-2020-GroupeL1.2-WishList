@@ -40,70 +40,6 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout4"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textColorHint="#FFFFFF">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtFirst_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="@string/InscriptionP"
-                    android:textColor="#FFFFFFFF"
-                    android:textColorLink="#FFFFFF"
-                    android:textSize="24sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout5"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textColorHint="#FFFFFF">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtLast_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:hint="@string/InscriptionN"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textColorHint="#FFFFFF">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:hint="@string/InscriptionM"
-                    android:textColor="#FFFFFFFF"
-                    android:textSize="24sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -120,6 +56,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/InscriptionPs"
+                    android:singleLine="true"
                     android:textColor="#FFFFFFFF"
                     android:textSize="24sp" />
 
@@ -144,6 +81,74 @@
                     android:gravity="center"
                     android:hint="@string/InscriptionPa"
                     android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="24sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColorHint="#FFFFFF">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtFirst_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:hint="@string/InscriptionP"
+                    android:singleLine="true"
+                    android:textColor="#FFFFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="24sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColorHint="#FFFFFF">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtLast_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="@string/InscriptionN"
+                    android:singleLine="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColorHint="#FFFFFF">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="@string/InscriptionM"
+                    android:singleLine="true"
                     android:textColor="#FFFFFFFF"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>

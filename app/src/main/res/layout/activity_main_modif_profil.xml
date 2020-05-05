@@ -83,6 +83,7 @@
                     android:gravity="center"
                     android:hint="@string/InscriptionP"
                     android:inputType="textPersonName"
+                    android:singleLine="true"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -106,6 +107,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:hint="@string/InscriptionN"
+                    android:singleLine="true"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -128,6 +130,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center|center_vertical"
                     android:hint="@string/InscriptionM"
+                    android:singleLine="true"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>

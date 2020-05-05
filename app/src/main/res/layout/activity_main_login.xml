@@ -35,6 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:singleLine="true"
                 android:hint="Username..."
                 android:textColor="#FFFFFF" />
 
@@ -58,6 +59,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:hint="Password..."
+                android:singleLine="true"
                 android:inputType="textPassword"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
