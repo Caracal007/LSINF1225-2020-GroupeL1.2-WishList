@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_thewisherlogo"
+        android:icon="@mipmap/ic_thewisherlogocopie"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_thewisherlogo_round"
+        android:roundIcon="@mipmap/ic_thewisherlogocopie_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainContentWishlistFriend"></activity>
