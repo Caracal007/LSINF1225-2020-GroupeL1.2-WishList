@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Objects;
+
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
@@ -26,29 +28,25 @@ public class MainModifProfil extends AppCompatActivity {
         Infos(Session.getSession());
     }
     private MySQLiteOpenHelper mySQLiteOpenHelper;
-    private TextInputEditText txtFirst_name;
-    private TextInputEditText txtLast_name;
-    private TextInputEditText txtEmail;
-    private String recup1, recup2, recup3;
 
     private void Infos(String username){
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String tab[] = mySQLiteOpenHelper.recupInfo(username);
-        TextInputEditText firstnameinfo = (TextInputEditText) findViewById(R.id.Fisrtname);
+        String[] tab = mySQLiteOpenHelper.recupInfo(username);
+        TextInputEditText firstnameinfo = findViewById(R.id.Fisrtname);
         firstnameinfo.setText(tab[0]);
-        TextInputEditText lastnameinfo = (TextInputEditText) findViewById(R.id.lastName);
+        TextInputEditText lastnameinfo = findViewById(R.id.lastName);
         lastnameinfo.setText(tab[1]);
-        TextInputEditText emailinfo = (TextInputEditText) findViewById(R.id.mail);
+        TextInputEditText emailinfo = findViewById(R.id.mail);
         emailinfo.setText(tab[2]);
     }
 
     private void modifInfos(String username){
-        txtFirst_name = (TextInputEditText) findViewById(R.id.Fisrtname);
-        txtLast_name = (TextInputEditText) findViewById(R.id.lastName);
-        txtEmail = (TextInputEditText) findViewById(R.id.mail);
-        recup1 = txtFirst_name.getText().toString();
-        recup2 = txtLast_name.getText().toString();
-        recup3 = txtEmail.getText().toString();
+        TextInputEditText txtFirst_name = findViewById(R.id.Fisrtname);
+        TextInputEditText txtLast_name = findViewById(R.id.lastName);
+        TextInputEditText txtEmail = findViewById(R.id.mail);
+        String recup1 = Objects.requireNonNull(txtFirst_name.getText()).toString();
+        String recup2 = Objects.requireNonNull(txtLast_name.getText()).toString();
+        String recup3 = Objects.requireNonNull(txtEmail.getText()).toString();
         mySQLiteOpenHelper.modifInfo(username, recup1, recup2, recup3);
     }
 

@@ -28,10 +28,9 @@ public class MainWishlistFriend extends AppCompatActivity implements View.OnClic
         addWishlistsToTab(StringMemory.getStringMemoryFriendName());
     }
 
-    private MySQLiteOpenHelper mySQLiteOpenHelper;
-    private String Tab[];
+    private String[] Tab;
     private void addWishlistsToTab(String username) {
-        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         Tab = mySQLiteOpenHelper.getWishlistsFriend(username);
         if (Tab != null) {
             for (int i = 0; i < Tab.length; i++) {
@@ -56,8 +55,8 @@ public class MainWishlistFriend extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         String str=v.getTag().toString();
-        for(int i = 0; i <Tab.length; i++) {
-            if (str.equals(Tab[i])) {
+        for (String s : Tab) {
+            if (str.equals(s)) {
                 StringMemory.initStringMemory(str);
                 Intent intent = new Intent(this, MainContentWishlistFriend.class);
                 startActivity(intent);
