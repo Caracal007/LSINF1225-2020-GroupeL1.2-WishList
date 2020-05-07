@@ -29,24 +29,23 @@ public class MainPreferences extends AppCompatActivity {
     private Spinner spinnerTailleChaussures;
     private Spinner spinnerTheme;
     private EditText textAdresse;
-    private String recup1, recup2, recup3, recup4, recup5, session;
 
     private void initPreferences(){
-        spinnerCouleur = (Spinner) findViewById(R.id.spinnerCouleur);
-        spinnerTailleVetements = (Spinner) findViewById(R.id.spinnerTailleVetements);
-        spinnerTailleChaussures = (Spinner) findViewById(R.id.spinnerTailleChaussures);
-        spinnerTheme = (Spinner) findViewById(R.id.spinnerTheme);
-        textAdresse = (EditText) findViewById(R.id.textAdresse);
+        spinnerCouleur = findViewById(R.id.spinnerCouleur);
+        spinnerTailleVetements = findViewById(R.id.spinnerTailleVetements);
+        spinnerTailleChaussures = findViewById(R.id.spinnerTailleChaussures);
+        spinnerTheme = findViewById(R.id.spinnerTheme);
+        textAdresse = findViewById(R.id.textAdresse);
         buttonMajPreferences();
     }
 
     private void Preferences() {
-        recup1 = spinnerCouleur.getSelectedItem().toString();
-        recup2 = spinnerTailleVetements.getSelectedItem().toString();
-        recup3 = spinnerTailleChaussures.getSelectedItem().toString();
-        recup4 = spinnerTheme.getSelectedItem().toString();
-        recup5 = textAdresse.getText().toString();
-        session = Session.getSession();
+        String recup1 = spinnerCouleur.getSelectedItem().toString();
+        String recup2 = spinnerTailleVetements.getSelectedItem().toString();
+        String recup3 = spinnerTailleChaussures.getSelectedItem().toString();
+        String recup4 = spinnerTheme.getSelectedItem().toString();
+        String recup5 = textAdresse.getText().toString();
+        String session = Session.getSession();
 
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         mySQLiteOpenHelper.insertPreferences(session, recup1, recup2, recup3, recup4, recup5);
@@ -55,63 +54,95 @@ public class MainPreferences extends AppCompatActivity {
 
     private void recupPref(String username){
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String tabPref[] = mySQLiteOpenHelper.recupPrefs(username);
+        String[] tabPref = mySQLiteOpenHelper.recupPrefs(username);
         if(tabPref != null) {
             /*Color ----------------------------------------->*/
-            if (tabPref[0].equals("Rouge"))
-                spinnerCouleur.setSelection(1);
-            else if (tabPref[0].equals("Bleu"))
-                spinnerCouleur.setSelection(2);
-            else if (tabPref[0].equals("Jaune"))
-                spinnerCouleur.setSelection(3);
-            else if (tabPref[0].equals("Vert"))
-                spinnerCouleur.setSelection(4);
-            else
-                spinnerCouleur.setSelection(0);
+            switch (tabPref[0]) {
+                case "Red":
+                    spinnerCouleur.setSelection(1);
+                    break;
+                case "Blue":
+                    spinnerCouleur.setSelection(2);
+                    break;
+                case "Yellow":
+                    spinnerCouleur.setSelection(3);
+                    break;
+                case "Green":
+                    spinnerCouleur.setSelection(4);
+                    break;
+                default:
+                    spinnerCouleur.setSelection(0);
+                    break;
+            }
             /*Color -----------------------------------------<*/
             /*TailleVetement ----------------------------------------->*/
-            if (tabPref[1].equals("XS"))
-                spinnerTailleVetements.setSelection(1);
-            else if (tabPref[1].equals("S"))
-                spinnerTailleVetements.setSelection(2);
-            else if (tabPref[1].equals("M"))
-                spinnerTailleVetements.setSelection(3);
-            else if (tabPref[1].equals("L"))
-                spinnerTailleVetements.setSelection(4);
-            else if (tabPref[1].equals("XL"))
-                spinnerTailleVetements.setSelection(5);
-            else
-                spinnerTailleVetements.setSelection(0);
+            switch (tabPref[1]) {
+                case "XS":
+                    spinnerTailleVetements.setSelection(1);
+                    break;
+                case "S":
+                    spinnerTailleVetements.setSelection(2);
+                    break;
+                case "M":
+                    spinnerTailleVetements.setSelection(3);
+                    break;
+                case "L":
+                    spinnerTailleVetements.setSelection(4);
+                    break;
+                case "XL":
+                    spinnerTailleVetements.setSelection(5);
+                    break;
+                default:
+                    spinnerTailleVetements.setSelection(0);
+                    break;
+            }
             /*TailleVetement -----------------------------------------<*/
             /*TailleChaussures----------------------------------------->*/
-            if (tabPref[2].equals("37-38"))
-                spinnerTailleChaussures.setSelection(1);
-            else if (tabPref[2].equals("38-39"))
-                spinnerTailleChaussures.setSelection(2);
-            else if (tabPref[2].equals("39-40"))
-                spinnerTailleChaussures.setSelection(3);
-            else if (tabPref[2].equals("40-41"))
-                spinnerTailleChaussures.setSelection(4);
-            else if (tabPref[2].equals("41-42"))
-                spinnerTailleChaussures.setSelection(5);
-            else if (tabPref[2].equals("42-43"))
-                spinnerTailleChaussures.setSelection(6);
-            else
-                spinnerTailleChaussures.setSelection(0);
+            switch (tabPref[2]) {
+                case "37-38":
+                    spinnerTailleChaussures.setSelection(1);
+                    break;
+                case "38-39":
+                    spinnerTailleChaussures.setSelection(2);
+                    break;
+                case "39-40":
+                    spinnerTailleChaussures.setSelection(3);
+                    break;
+                case "40-41":
+                    spinnerTailleChaussures.setSelection(4);
+                    break;
+                case "41-42":
+                    spinnerTailleChaussures.setSelection(5);
+                    break;
+                case "42-43":
+                    spinnerTailleChaussures.setSelection(6);
+                    break;
+                default:
+                    spinnerTailleChaussures.setSelection(0);
+                    break;
+            }
             /*TailleChaussures----------------------------------------->*/
             /*Thème----------------------------------------->*/
-            if (tabPref[3].equals("Jardin"))
-                spinnerTheme.setSelection(1);
-            else if (tabPref[3].equals("Mobilier"))
-                spinnerTheme.setSelection(2);
-            else if (tabPref[3].equals("Sport"))
-                spinnerTheme.setSelection(3);
-            else if (tabPref[3].equals("Média"))
-                spinnerTheme.setSelection(4);
-            else if (tabPref[3].equals("Electronique"))
-                spinnerTheme.setSelection(5);
-            else
-                spinnerTheme.setSelection(0);
+            switch (tabPref[3]) {
+                case "Garden":
+                    spinnerTheme.setSelection(1);
+                    break;
+                case "Furniture":
+                    spinnerTheme.setSelection(2);
+                    break;
+                case "Sport":
+                    spinnerTheme.setSelection(3);
+                    break;
+                case "Media":
+                    spinnerTheme.setSelection(4);
+                    break;
+                case "Devices":
+                    spinnerTheme.setSelection(5);
+                    break;
+                default:
+                    spinnerTheme.setSelection(0);
+                    break;
+            }
             /*Thème----------------------------------------->*/
             /*Adresse----------------------------------------->*/
             if (!tabPref[4].equals(" "))

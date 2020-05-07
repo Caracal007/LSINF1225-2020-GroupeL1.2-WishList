@@ -31,21 +31,21 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
 
         setPrivacy(Session.getSession(), StringMemory.getStringMemory());
 
-        titleWishlist = (TextView)findViewById(R.id.textNamewishlistTitle);
+        TextView titleWishlist = findViewById(R.id.textNamewishlistTitle);
         titleWishlist.setText(StringMemory.getStringMemory());
     }
-    private TextView titleWishlist;
+
     private MySQLiteOpenHelper mySQLiteOpenHelper;
-    private String Tab[];
+    private String[] Tab;
 
     private void addItemsToTab(String username, String wishlist) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         Tab = mySQLiteOpenHelper.getItems(username, wishlist);
         if (Tab != null) {
-            for (int i = 0; i < Tab.length; i++) {
+            for (String s : Tab) {
                 LinearLayout tableau = (LinearLayout) findViewById(R.id.ScrollItemsTab);
                 Button giftName = new Button(this);
-                giftName.setText(Tab[i]);
+                giftName.setText(s);
                 giftName.setOnClickListener(this);
                 giftName.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
@@ -60,7 +60,7 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 layoutParams.setMargins(45, 10, 30, 0);
                 giftName.setLayoutParams(layoutParams);
-                giftName.setTag(Tab[i]);
+                giftName.setTag(s);
                 giftName.setBackgroundResource(R.drawable.roundedbutton);
                 tableau.addView(giftName);
             }
@@ -84,7 +84,7 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
     private void openDialog(String giftName){
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("DELETE MESSAGE")
-                .setMessage("Are you sur you want to delete "+ giftName +" of your gift's list ?")
+                .setMessage("Are you sur you want to delete "+"'"+ giftName +"'"+" of your whishist ?")
                 .setIcon(R.drawable.icons8_poubelle_30)
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
@@ -164,8 +164,8 @@ public class MainContentWishList extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         String str = v.getTag().toString();
-        for (int i = 0; i <Tab.length; i++){
-            if (str.equals(Tab[i])){
+        for (String s : Tab) {
+            if (str.equals(s)) {
                 StringMemory.initStringMemoryGiftName(str);
                 Intent intent = new Intent(this, MainItemDescription.class);
                 startActivity(intent);

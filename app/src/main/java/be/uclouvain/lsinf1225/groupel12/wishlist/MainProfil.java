@@ -34,7 +34,7 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
         allButton();
     }
     private MySQLiteOpenHelper mySQLiteOpenHelper;
-    private String Tab[];
+    private String[] Tab;
     private void addWishlistsToTab(String username) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         Tab = mySQLiteOpenHelper.getLists(username);
@@ -73,16 +73,14 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
     public void onClick(View v) {
         String str = v.getTag().toString();
         int id = v.getId();
-        for (int i = 0; i < Tab.length; i++) {
-                if (str.equals(Tab[i])) {
-                    if (id == 0) {
-                        StringMemory.initStringMemory(str);
-                        Intent intent = new Intent(this, MainContentWishList.class);
-                        startActivity(intent);
-                    } else {
-
-                    }
+        for (String s : Tab) {
+            if (str.equals(s)) {
+                if (id == 0) {
+                    StringMemory.initStringMemory(str);
+                    Intent intent = new Intent(this, MainContentWishList.class);
+                    startActivity(intent);
                 }
+            }
         }
     }
 
@@ -91,7 +89,7 @@ public class MainProfil extends AppCompatActivity implements  View.OnClickListen
     private void openDialog(String wishlistName){
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("DELETE MESSAGE")
-                .setMessage("Are you sur you want to delete "+ wishlistName +" of your wishlist's list ?")
+                .setMessage("Are you sur you want to delete "+ "'" + wishlistName + "'"+" of your wishlist's list ?")
                 .setIcon(R.drawable.icons8_poubelle_30)
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
