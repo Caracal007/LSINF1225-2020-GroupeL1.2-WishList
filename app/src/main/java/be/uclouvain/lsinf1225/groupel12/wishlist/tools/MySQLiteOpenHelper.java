@@ -219,7 +219,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         cursor.close();
 
         if(count != 0){
-            return "You already have a list called " + nameList;
+            return "You already have a whishlist called " + nameList;
         }
         return null;
     }

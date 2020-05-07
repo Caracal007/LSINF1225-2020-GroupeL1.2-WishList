@@ -2,6 +2,7 @@ package be.uclouvain.lsinf1225.groupel12.wishlist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Objects;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
@@ -57,17 +60,17 @@ public class MainAddFriend extends AppCompatActivity {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         boolean ok = mySQLiteOpenHelper.addFriend(friendName);
         if(ok && !friendName.equals(Session.getSession())){
-            Toast.makeText(this, "Une invitation a été envoyée", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "A friend request has been sent", Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(this, "Ami incorrect !", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Incorrect name !", Toast.LENGTH_LONG).show();
         }
     }
     private void buttonAddFriend(){
         findViewById(R.id.addFriendButton).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 TextView friendToAdd = (TextView) findViewById(R.id.friendToAdd);
-                String friendName = ((TextInputEditText) findViewById(R.id.searchView)).getText().toString();
+                String friendName = Objects.requireNonNull(((TextInputEditText) findViewById(R.id.searchView)).getText()).toString();
                 addFriend(friendName);
             }
         })

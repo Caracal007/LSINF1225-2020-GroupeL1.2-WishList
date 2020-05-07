@@ -19,6 +19,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
@@ -33,7 +34,7 @@ public class MainAddGift extends AppCompatActivity {
     private Spinner spinnerChooseWishlist;
     boolean isValid;
     private MySQLiteOpenHelper mySQLiteOpenHelper;
-    private String WishTab[];
+    private String[] WishTab;
 
 
     @Override
@@ -91,9 +92,7 @@ public class MainAddGift extends AppCompatActivity {
         WishTab = mySQLiteOpenHelper.getLists(username);
         ArrayList<String> wishList = new ArrayList<>();
         if (WishTab != null) {
-            for (int i = 0; i <WishTab.length; i++) {
-                wishList.add(WishTab[i]);
-            }
+            Collections.addAll(wishList, WishTab);
             Spinner spinner = (Spinner) findViewById(R.id.spinnerChooseWishlist);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, wishList);
             spinner.setAdapter(adapter);

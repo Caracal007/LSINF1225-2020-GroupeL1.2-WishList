@@ -17,6 +17,8 @@ import android.widget.ToggleButton;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Objects;
+
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.MySQLiteOpenHelper;
 import be.uclouvain.lsinf1225.groupel12.wishlist.tools.Session;
 
@@ -28,11 +30,9 @@ public class MainAddWishlist extends AppCompatActivity{
         setContentView(R.layout.activity_main_add_wishlist);
         initAddWishlist();
     }
-    private MySQLiteOpenHelper mySQLiteOpenHelper;
 
     private TextInputEditText txtList_name;
     private CheckBox switchPrivacy;
-    private String recup1, session, recup2;
 
     private void initAddWishlist(){
         txtList_name = findViewById(R.id.txtList_name);
@@ -41,21 +41,19 @@ public class MainAddWishlist extends AppCompatActivity{
     }
 
     private void AddWishList(String privacy){
-        recup1 = txtList_name.getText().toString();
-        recup2 = privacy;
+        String recup1 = Objects.requireNonNull(txtList_name.getText()).toString();
+        String session = Session.getSession();
 
-        session = Session.getSession();
-
-        mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String alreadyExists = mySQLiteOpenHelper.checkWishlistAlreadyExist(session, recup1, recup2);
+        MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        String alreadyExists = mySQLiteOpenHelper.checkWishlistAlreadyExist(session, recup1, privacy);
         if(alreadyExists != null){
             Toast.makeText(this, alreadyExists, Toast.LENGTH_LONG).show();
         }
         else if(recup1.matches("")){
-            Toast.makeText(this, "Poor wishlist, she deserves a name !", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Poor wishlist, it deserves a name !", Toast.LENGTH_LONG).show();
         }
         else{
-            mySQLiteOpenHelper.insertAddWishlist(session, recup1, recup2);
+            mySQLiteOpenHelper.insertAddWishlist(session, recup1, privacy);
             openActivityProfil();
         }
         mySQLiteOpenHelper.close();

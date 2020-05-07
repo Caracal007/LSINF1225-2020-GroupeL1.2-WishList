@@ -101,18 +101,20 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint="@string/Prix"
+
                 android:textColorHint="@color/colorAccent">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/price"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="345dp"
+                    android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:singleLine="true"
                     android:textColor="@color/colorAccent"
                     android:textColorHint="@color/colorAccent"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:inputType="numberDecimal"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
