@@ -19,7 +19,7 @@ public class MainFriendPreferences extends AppCompatActivity {
         setContentView(R.layout.activity_main_friend_preferences);
         recupPref(StringMemory.getStringMemoryFriendName());
 
-
+        setFriendPreference(StringMemory.getStringMemoryFriendName());
     }
     private MySQLiteOpenHelper mySQLiteOpenHelper;
 
