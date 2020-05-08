@@ -134,12 +134,13 @@
                         app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
                         app:passwordToggleTint="#FF9800">
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/priceItem"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:maxLines="1"
-                            tools:text="priceItem" />
+                            tools:text="priceItem"
+                            android:inputType="numberDecimal"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
