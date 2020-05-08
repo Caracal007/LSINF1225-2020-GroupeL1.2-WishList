@@ -38,7 +38,7 @@ public class MainEditGiftDescription extends AppCompatActivity {
 
     public void setTextItemDescription(){
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String Tab[] = mySQLiteOpenHelper.getItemDescription(Session.getSession(), StringMemory.getStringMemory(), StringMemory.getStringMemoryGiftName());
+        String[] Tab = mySQLiteOpenHelper.getItemDescription(Session.getSession(), StringMemory.getStringMemory(), StringMemory.getStringMemoryGiftName());
         urlItem = (TextView)findViewById(R.id.urlItem);
         priceItem = (TextView)findViewById(R.id.priceItem);
         descriptionItem = (TextView)findViewById(R.id.descriptionItem);
