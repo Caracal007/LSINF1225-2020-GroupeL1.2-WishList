@@ -212,7 +212,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
 
     //Add Wishlist -------------------------------------------------------------->>>
-    public String checkWishlistAlreadyExist(String username, String nameList, String privacy) {
+    public String checkWishlistAlreadyExist(String username, String nameList) {
         String check = "select colUsername from wishlists where colUsername='"+username+"' and colWishlistName='"+nameList+"'";
         Cursor cursor = (this.getReadableDatabase()).rawQuery(check, null);
         int count = cursor.getCount();

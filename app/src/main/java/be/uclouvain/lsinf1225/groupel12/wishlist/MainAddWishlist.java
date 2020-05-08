@@ -45,7 +45,7 @@ public class MainAddWishlist extends AppCompatActivity{
         String session = Session.getSession();
 
         MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
-        String alreadyExists = mySQLiteOpenHelper.checkWishlistAlreadyExist(session, recup1, privacy);
+        String alreadyExists = mySQLiteOpenHelper.checkWishlistAlreadyExist(session, recup1);
         if(alreadyExists != null){
             Toast.makeText(this, alreadyExists, Toast.LENGTH_LONG).show();
         }
