@@ -30,7 +30,7 @@ public class MainFriendNotification extends AppCompatActivity implements View.On
     }
 
     private MySQLiteOpenHelper mySQLiteOpenHelper;
-    private String Tab[];
+    private String[] Tab;
     private void addFriendsRequestToTab(String username) {
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         Tab = mySQLiteOpenHelper.getFriendsRequestsLists(username);

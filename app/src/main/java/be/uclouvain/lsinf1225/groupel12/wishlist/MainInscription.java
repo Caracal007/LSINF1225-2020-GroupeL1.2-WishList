@@ -72,7 +72,7 @@ public class MainInscription extends AppCompatActivity {
             }
             else{
                 Session.initSession(recup1);
-                openActivity2();
+                openActivityMainPreferences();
             }
             mySQLiteOpenHelper.close();
         }
@@ -119,7 +119,7 @@ public class MainInscription extends AppCompatActivity {
     }
 
 
-    public void openActivity2(){
+    public void openActivityMainPreferences(){
         Intent intent = new Intent(this, MainPreferences.class);
         startActivity(intent);
     }

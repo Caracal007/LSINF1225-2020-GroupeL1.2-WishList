@@ -25,11 +25,11 @@ public class MainModifProfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_modif_profil);
         buttonAll();
-        Infos(Session.getSession());
+        infos(Session.getSession());
     }
     private MySQLiteOpenHelper mySQLiteOpenHelper;
 
-    private void Infos(String username){
+    private void infos(String username){
         mySQLiteOpenHelper = new MySQLiteOpenHelper(this);
         String[] tab = mySQLiteOpenHelper.recupInfo(username);
         TextInputEditText firstnameinfo = findViewById(R.id.Fisrtname);
